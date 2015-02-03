@@ -39,7 +39,11 @@
         },
         build_fa: {
           command: 'node ./scripts/build-font-awesome-javascript.js'
+        },
+        build_fo: {
+          command: 'node ./scripts/build-font-foehn-javascript.js'
         }
+
       },
       browserify: {
         libs: {
@@ -133,7 +137,7 @@
     this.loadNpmTasks('grunt-browserify');
 
     this.registerTask('dev', ['test', 'connect:server', 'watch']);
-    this.registerTask('build', ['bower-install-simple', 'exec:build_stylus', 'exec:build_fa', 'browserify:libs']);
+    this.registerTask('build', ['bower-install-simple', 'exec:build_stylus', 'exec:build_fa', 'exec:build_fo', 'browserify:libs']);
     this.registerTask('test', ['jshint:all', 'inlinelint:all', 'build']);
     this.registerTask('default', ['test']);
   };
