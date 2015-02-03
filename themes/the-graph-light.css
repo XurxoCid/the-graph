@@ -182,63 +182,63 @@
 }
 @-webkit-keyframes heartbeats {
   0% {
-    stroke-width: 8px;
+    stroke-width: 16px;
   }
   10% {
-    stroke-width: 16px;
+    stroke-width: 24px;
   }
   30% {
-    stroke-width: 8px;
-  }
-  40% {
     stroke-width: 16px;
   }
+  40% {
+    stroke-width: 24px;
+  }
   60% {
-    stroke-width: 8px;
+    stroke-width: 16px;
   }
 }
 @-moz-keyframes heartbeats {
   0% {
-    stroke-width: 8px;
+    stroke-width: 16px;
   }
   10% {
-    stroke-width: 16px;
+    stroke-width: 24px;
   }
   30% {
-    stroke-width: 8px;
-  }
-  40% {
     stroke-width: 16px;
   }
+  40% {
+    stroke-width: 24px;
+  }
   60% {
-    stroke-width: 8px;
+    stroke-width: 16px;
   }
 }
 @-o-keyframes heartbeats {
   0% {
-    stroke-width: 8px;
+    stroke-width: 16px;
   }
   10% {
-    stroke-width: 16px;
+    stroke-width: 24px;
   }
   30% {
-    stroke-width: 8px;
-  }
-  40% {
     stroke-width: 16px;
   }
+  40% {
+    stroke-width: 24px;
+  }
   60% {
-    stroke-width: 8px;
+    stroke-width: 16px;
   }
 }
 .the-graph-light .edge.animated .edge-bg {
   stroke-linecap: round;
-  stroke-width: 8px;
+  stroke-width: 16px;
   stroke: #808080;
-  -webkit-animation: heartbeats 4s linear infinite;
-  -moz-animation: heartbeats 4s linear infinite;
-  -o-animation: heartbeats 4s linear infinite;
-  animation: heartbeats 4s linear infinite;
+  -webkit-animation: heartbeats 1s linear infinite;
+  -moz-animation: heartbeats 1s linear infinite;
+  -o-animation: heartbeats 1s linear infinite;
+  animation: heartbeats 1s linear infinite;
 }
 .the-graph-light text {
   font-family: "SourceCodePro", "Source Code Pro", Helvetica, Arial, sans-serif;
@@ -369,8 +369,13 @@
   text-anchor: start;
   font-size: 10px;
 }
-.the-graph-light .icon {
+.the-graph-light .icon.context-icon {
   font-family: 'FontAwesomeSVG';
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+.the-graph-light .icon {
+  font-family: 'font-foehn';
   text-anchor: middle;
   dominant-baseline: central;
 }
@@ -723,69 +728,69 @@
 }
 @-moz-keyframes heartbeats {
   0% {
-    stroke-width: 8px;
+    stroke-width: 16px;
   }
   10% {
-    stroke-width: 16px;
+    stroke-width: 24px;
   }
   30% {
-    stroke-width: 8px;
-  }
-  40% {
     stroke-width: 16px;
   }
+  40% {
+    stroke-width: 24px;
+  }
   60% {
-    stroke-width: 8px;
+    stroke-width: 16px;
   }
 }
 @-webkit-keyframes heartbeats {
   0% {
-    stroke-width: 8px;
+    stroke-width: 16px;
   }
   10% {
-    stroke-width: 16px;
+    stroke-width: 24px;
   }
   30% {
-    stroke-width: 8px;
-  }
-  40% {
     stroke-width: 16px;
   }
+  40% {
+    stroke-width: 24px;
+  }
   60% {
-    stroke-width: 8px;
+    stroke-width: 16px;
   }
 }
 @-o-keyframes heartbeats {
   0% {
-    stroke-width: 8px;
+    stroke-width: 16px;
   }
   10% {
-    stroke-width: 16px;
+    stroke-width: 24px;
   }
   30% {
-    stroke-width: 8px;
-  }
-  40% {
     stroke-width: 16px;
   }
+  40% {
+    stroke-width: 24px;
+  }
   60% {
-    stroke-width: 8px;
+    stroke-width: 16px;
   }
 }
 @keyframes heartbeats {
   0% {
-    stroke-width: 8px;
+    stroke-width: 16px;
   }
   10% {
-    stroke-width: 16px;
+    stroke-width: 24px;
   }
   30% {
-    stroke-width: 8px;
-  }
-  40% {
     stroke-width: 16px;
   }
+  40% {
+    stroke-width: 24px;
+  }
   60% {
-    stroke-width: 8px;
+    stroke-width: 16px;
   }
 }

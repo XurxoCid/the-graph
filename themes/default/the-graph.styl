@@ -206,42 +206,42 @@ path {
 /* marching ants for animated edges */
 
 @-webkit-keyframes heartbeats {
-  0% { stroke-width: (var-edge-width * 2); }
-  10% { stroke-width: (var-edge-width * 4); }
-  30% { stroke-width: (var-edge-width * 2); }
-  40% { stroke-width: (var-edge-width * 4); }
-  60% { stroke-width: (var-edge-width * 2); }
+  0% { stroke-width: (var-edge-width * 4); }
+  10% { stroke-width: (var-edge-width * 6); }
+  30% { stroke-width: (var-edge-width * 4); }
+  40% { stroke-width: (var-edge-width * 6); }
+  60% { stroke-width: (var-edge-width * 4); }
 }
 @-moz-keyframes heartbeats {
-  0% { stroke-width: (var-edge-width * 2); }
-  10% { stroke-width: (var-edge-width * 4); }
-  30% { stroke-width: (var-edge-width * 2); }
-  40% { stroke-width: (var-edge-width * 4); }
-  60% { stroke-width: (var-edge-width * 2); }
+  0% { stroke-width: (var-edge-width * 4); }
+  10% { stroke-width: (var-edge-width * 6); }
+  30% { stroke-width: (var-edge-width * 4); }
+  40% { stroke-width: (var-edge-width * 6); }
+  60% { stroke-width: (var-edge-width * 4); }
 }
 @-o-keyframes heartbeats {
-  0% { stroke-width: (var-edge-width * 2); }
-  10% { stroke-width: (var-edge-width * 4); }
-  30% { stroke-width: (var-edge-width * 2); }
-  40% { stroke-width: (var-edge-width * 4); }
-  60% { stroke-width: (var-edge-width * 2); }
+  0% { stroke-width: (var-edge-width * 4); }
+  10% { stroke-width: (var-edge-width * 6); }
+  30% { stroke-width: (var-edge-width * 4); }
+  40% { stroke-width: (var-edge-width * 6); }
+  60% { stroke-width: (var-edge-width * 4); }
 }
 @keyframes heartbeats {
-  0% { stroke-width: (var-edge-width * 2); }
-  10% { stroke-width: (var-edge-width * 4); }
-  30% { stroke-width: (var-edge-width * 2); }
-  40% { stroke-width: (var-edge-width * 4); }
-  60% { stroke-width: (var-edge-width * 2); }
+  0% { stroke-width: (var-edge-width * 4); }
+  10% { stroke-width: (var-edge-width * 6); }
+  30% { stroke-width: (var-edge-width * 4); }
+  40% { stroke-width: (var-edge-width * 6); }
+  60% { stroke-width: (var-edge-width * 4); }
 }
 .edge.animated .edge-bg {
   stroke-linecap: round;
-  stroke-width: (var-edge-width * 2);
+  stroke-width: (var-edge-width * 4);
   stroke: var-selection-box-border;
 
-  -webkit-animation: heartbeats 4s linear infinite;
-     -moz-animation: heartbeats 4s linear infinite;
-       -o-animation: heartbeats 4s linear infinite;
-          animation: heartbeats 4s linear infinite;
+  -webkit-animation: heartbeats 1s linear infinite; 
+     -moz-animation: heartbeats 1s linear infinite; 
+       -o-animation: heartbeats 1s linear infinite; 
+          animation: heartbeats 1s linear infinite;   
 }
 
 
@@ -383,34 +383,45 @@ text {
   transition-property: opacity;
   transition-duration: 0.3s;
 }
+
 .tooltip.hidden {
   opacity: 0;
 }
+
 .tooltip-bg {
   fill: var-tooltip-bg;
   opacity: 0.75;
 }
+
 .tooltip-label {
   text-anchor: start;
   font-size: 10px;
 }
 
-.icon {
+.icon.context-icon {
   font-family: 'FontAwesomeSVG';
   text-anchor: middle;
   dominant-baseline: central;
 }
+
+.icon {
+  font-family: 'font-foehn';
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
 .node-icon {
   font-size: 45px;
   fill: var-node-icon;
-
   transition-property: font-size, fill;
   transition-duration: 0.5s,      0.3s;
 }
+
 .small .node-icon {
   fill: var-node-icon-small;
   font-size: 66px;
 }
+
 .big .node-icon {
   fill: var-node-icon-big;
 }
