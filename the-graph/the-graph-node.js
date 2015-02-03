@@ -425,9 +425,9 @@
       });
 
       // Node Icon
-      var icon = TheGraph.FONT_AWESOME[ this.props.icon ];
+      var icon = TheGraph.FONT_FOEHN[ this.props.icon ];
       if (!icon) {
-        icon = TheGraph.FONT_AWESOME.cog;
+        icon = TheGraph.FONT_FOEHN.cog;
       }
 
       var iconContent;

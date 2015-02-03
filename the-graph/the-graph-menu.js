@@ -225,7 +225,7 @@
 
         var middleIconTextOptions = {
           className: "icon context-node-icon"+iconStyle,
-          children: TheGraph.FONT_AWESOME[ (this.props.icon ? this.props.icon : menu.icon) ]
+          children: TheGraph.FONT_FOEHN[ (this.props.icon ? this.props.icon : menu.icon) ]
         };
         middleIconTextOptions = TheGraph.merge(TheGraph.config.menu.iconText, middleIconTextOptions);
         var iconText = TheGraph.factories.menu.createMenuMiddleIconText.call(this, middleIconTextOptions);
