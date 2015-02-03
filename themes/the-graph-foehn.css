@@ -1,0 +1,862 @@
+.the-graph-foehn .the-graph-app {
+  background-color: #fff;
+  position: relative;
+}
+.the-graph-foehn .app-canvas,
+.the-graph-foehn .app-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.the-graph-foehn svg {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.the-graph-foehn .arrow {
+  cursor: default;
+}
+.the-graph-foehn .click {
+  cursor: pointer;
+}
+.the-graph-foehn .drag {
+  cursor: pointer;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+.the-graph-foehn .node-border {
+  fill: rgba(0,0,0,0.5);
+  stroke: #032536;
+  stroke-width: 2px;
+}
+.the-graph-foehn .node-rect {
+  fill: #feffff;
+  stroke: none;
+}
+@-webkit-keyframes error {
+  0% {
+    fill: #feffff;
+  }
+
+  100% {
+    fill: rgba(255,0,0,0.94);
+  }
+}
+@-moz-keyframes error {
+  0% {
+    fill: #feffff;
+  }
+
+  100% {
+    fill: rgba(255,0,0,0.94);
+  }
+}
+@-o-keyframes error {
+  0% {
+    fill: #feffff;
+  }
+
+  100% {
+    fill: rgba(255,0,0,0.94);
+  }
+}
+.the-graph-foehn .node.error .node-rect {
+  -webkit-animation: error 1s linear infinite alternate;
+  -moz-animation: error 1s linear infinite alternate;
+  -o-animation: error 1s linear infinite alternate;
+  animation: error 1s linear infinite alternate;
+  stroke: none;
+}
+.the-graph-foehn .node:hover .node-rect {
+  fill: rgba(230,238,240,0.97);
+}
+.the-graph-foehn .node:hover .node-border {
+  stroke: #808080;
+}
+.the-graph-foehn .node:hover .port-arc {
+  fill: #808080;
+}
+.the-graph-foehn .ex-inports .node-border {
+  fill: #1a1a1a;
+  stroke: none;
+}
+.the-graph-foehn .ex-outports .node-border {
+  fill: #1a1a1a;
+  stroke: none;
+}
+.the-graph-foehn .ex-inports .node .node-rect,
+.the-graph-foehn .ex-outports .node .node-rect,
+.the-graph-foehn .ex-inports .node:hover .node-rect,
+.the-graph-foehn .ex-outports .node:hover .node-rect {
+  fill: none;
+}
+.the-graph-foehn .selection .ex-inports .node .node-border,
+.the-graph-foehn .selection .ex-outports .node .node-border {
+  fill: #1a1a1a;
+}
+.the-graph-foehn .small .node-border {
+  fill: #feffff;
+  stroke: none;
+}
+.the-graph-foehn .small .ex-inports .node .node-border,
+.the-graph-foehn .small .ex-outports .node .node-border {
+  fill: #1a1a1a;
+}
+.the-graph-foehn .node-bg {
+  opacity: 0;
+}
+.the-graph-foehn .selection .node .node-rect {
+  fill: rgba(61,66,67,0.94);
+}
+.the-graph-foehn .selection .node .node-border {
+  stroke: #232829;
+}
+.the-graph-foehn .selection .node .port-arc {
+  fill: #232829;
+}
+.the-graph-foehn .selection .node .node-icon {
+  fill: #232829;
+}
+.the-graph-foehn .selection .node.selected .node-rect {
+  fill: rgba(230,238,240,0.94);
+}
+.the-graph-foehn .selection .node.selected .node-border {
+  stroke: #808080;
+}
+.the-graph-foehn .selection .node.selected .port-arc {
+  fill: #808080;
+}
+.the-graph-foehn .selection .node.selected .node-icon {
+  fill: #5e6a6e;
+}
+.the-graph-foehn .selection .ex-inports .node .node-icon {
+  fill: #512f01;
+}
+.the-graph-foehn .selection .ex-outports .node .node-icon {
+  fill: #015115;
+}
+.the-graph-foehn .small .selection .node .node-rect {
+  fill: none;
+}
+.the-graph-foehn .small .selection .node .node-border {
+  fill: rgba(61,66,67,0.94);
+  stroke: none;
+}
+.the-graph-foehn .small .selection .node.selected .node-rect {
+  fill: none;
+}
+.the-graph-foehn .small .selection .node.selected .node-border {
+  fill: rgba(230,238,240,0.94);
+  stroke: none;
+}
+.the-graph-foehn path {
+  fill: none;
+}
+.the-graph-foehn .edge-bg {
+  stroke: #000;
+  stroke-width: 5px;
+}
+.the-graph-foehn .edge-fg {
+  stroke: #fff;
+  stroke-width: 3px;
+  transition-property: stroke-width;
+  transition-duration: 0.5s;
+}
+.the-graph-foehn .edge-touch {
+  stroke-width: 7px;
+  opacity: 0;
+}
+.the-graph-foehn .edge:hover .edge-bg {
+  stroke: #808080;
+}
+.the-graph-foehn .edge.selected .edge-bg {
+  stroke-width: 8px;
+  stroke: #e6e6e6;
+}
+.the-graph-foehn .small .edge-bg {
+  stroke-width: 8px;
+}
+.the-graph-foehn .small .edge-fg {
+  stroke-width: 6px;
+}
+@-webkit-keyframes heartbeats {
+  0% {
+    stroke-width: 12px;
+  }
+
+  10% {
+    stroke-width: 18px;
+  }
+
+  30% {
+    stroke-width: 12px;
+  }
+
+  40% {
+    stroke-width: 18px;
+  }
+
+  60% {
+    stroke-width: 12px;
+  }
+}
+@-moz-keyframes heartbeats {
+  0% {
+    stroke-width: 12px;
+  }
+
+  10% {
+    stroke-width: 18px;
+  }
+
+  30% {
+    stroke-width: 12px;
+  }
+
+  40% {
+    stroke-width: 18px;
+  }
+
+  60% {
+    stroke-width: 12px;
+  }
+}
+@-o-keyframes heartbeats {
+  0% {
+    stroke-width: 12px;
+  }
+
+  10% {
+    stroke-width: 18px;
+  }
+
+  30% {
+    stroke-width: 12px;
+  }
+
+  40% {
+    stroke-width: 18px;
+  }
+
+  60% {
+    stroke-width: 12px;
+  }
+}
+.the-graph-foehn .edge.animated .edge-bg {
+  stroke-linecap: round;
+  stroke-width: 12px;
+  stroke: #e6e6e6;
+  -webkit-animation: heartbeats 1s linear infinite;
+  -moz-animation: heartbeats 1s linear infinite;
+  -o-animation: heartbeats 1s linear infinite;
+  animation: heartbeats 1s linear infinite;
+}
+.the-graph-foehn text {
+  font-family: "SourceCodePro", "Source Code Pro", Helvetica, Arial, sans-serif;
+  text-rendering: geometricPrecision;
+/* makes text scale smoothly */
+  font-size: 14px;
+  fill: #fff;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+.the-graph-foehn .text-bg-rect {
+  fill: rgba(0,0,0,0.5);
+}
+.the-graph-foehn .node-label,
+.the-graph-foehn .node-sublabel {
+  text-anchor: middle;
+}
+.the-graph-foehn .small .node-label-bg {
+  visibility: hidden;
+}
+.the-graph-foehn .node-sublabel {
+  font-size: 9px;
+}
+.the-graph-foehn .node-sublabel-bg {
+  visibility: hidden;
+}
+.the-graph-foehn .big .node-sublabel-bg {
+  visibility: visible;
+}
+.the-graph-foehn .iip-path {
+  stroke-width: 1px;
+  stroke: #fff;
+}
+.the-graph-foehn .iip-info {
+  visibility: hidden;
+}
+.the-graph-foehn .iip-info .text-bg-text {
+  font-size: 5px;
+  text-anchor: end;
+}
+.the-graph-foehn .big .iip-info {
+  visibility: visible;
+}
+.the-graph-foehn .context-modal-bg {
+  fill: rgba(0,0,0,0.5);
+}
+.the-graph-foehn .context-node-rect {
+  fill: #121417;
+  stroke: #bfbfbf;
+  stroke-width: 0.5px;
+}
+.the-graph-foehn .context-node-icon {
+  font-size: 30px;
+  fill: #fff;
+}
+.the-graph-foehn .context-icon {
+  font-size: 20px;
+  fill: #fff;
+}
+.the-graph-foehn .context-node-label {
+  text-anchor: middle;
+}
+.the-graph-foehn .context-arc {
+  stroke-width: 72px;
+  stroke: rgba(43,48,54,0.95);
+}
+.the-graph-foehn .context-slice.click:hover .context-arc {
+  stroke: rgba(90,102,114,0.95);
+}
+.the-graph-foehn .context-circle {
+  stroke: #bfbfbf;
+  fill: none;
+  stroke-width: 1.5px;
+}
+.the-graph-foehn .context-circle-x {
+  stroke: #bfbfbf;
+  fill: none;
+  stroke-width: 1px;
+}
+.the-graph-foehn .context-arc-icon-label {
+  font-size: 12px;
+}
+.the-graph-foehn .context-port-bg {
+  fill: rgba(43,48,54,0.95);
+}
+.the-graph-foehn .context-port-bg.highlight {
+  stroke: #bfbfbf;
+  stroke-width: 1px;
+}
+.the-graph-foehn .context-port-hole {
+  stroke-width: 2px;
+  fill: rgba(43,48,54,0.95);
+  stroke: #bfbfbf;
+}
+.the-graph-foehn .context-port-path {
+  stroke: #bfbfbf;
+}
+.the-graph-foehn .context-port-label {
+  fill: #fff;
+  dominant-baseline: central;
+}
+.the-graph-foehn .context-port-in .context-port-label {
+  text-anchor: end;
+}
+.the-graph-foehn .context-port-out .context-port-label {
+  text-anchor: start;
+}
+.the-graph-foehn .context-edge-label-out {
+  text-anchor: end;
+  dominant-baseline: central;
+}
+.the-graph-foehn .context-edge-label-in {
+  text-anchor: start;
+  dominant-baseline: central;
+}
+.the-graph-foehn .tooltip {
+  opacity: 1;
+  transition-property: opacity;
+  transition-duration: 0.3s;
+}
+.the-graph-foehn .tooltip.hidden {
+  opacity: 0;
+}
+.the-graph-foehn .tooltip-bg {
+  fill: rgba(0,0,0,0.9);
+  opacity: 0.75;
+}
+.the-graph-foehn .tooltip-label {
+  text-anchor: start;
+  font-size: 10px;
+}
+.the-graph-foehn .icon.context-icon {
+  font-family: 'FontAwesomeSVG';
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+.the-graph-foehn .icon {
+  font-family: 'font-foehn';
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+.the-graph-foehn .node-icon {
+  font-size: 45px;
+  fill: #6e91a1;
+  transition-property: font-size, fill;
+  transition-duration: 0.5s, 0.3s;
+}
+.the-graph-foehn .small .node-icon {
+  fill: #000;
+  font-size: 66px;
+}
+.the-graph-foehn .big .node-icon {
+  fill: #6e91a1;
+}
+.the-graph-foehn .ex-inports .node-icon,
+.the-graph-foehn .small .ex-inports .node-icon {
+  fill: #e88802;
+}
+.the-graph-foehn .ex-outports .node-icon,
+.the-graph-foehn .small .ex-outports .node-icon {
+  fill: #02e83c;
+}
+.the-graph-foehn .port-circle-bg {
+  fill: #032536;
+  opacity: 0;
+}
+.the-graph-foehn .port-arc {
+  fill: #032536;
+}
+.the-graph-foehn .port-circle-small {
+  fill: none;
+}
+.the-graph-foehn .small .port-circle {
+  visibility: hidden;
+}
+.the-graph-foehn .port-label {
+  fill: #0c0d0e;
+  visibility: hidden;
+  font-size: 6px;
+  dominant-baseline: central;
+}
+.the-graph-foehn .inports .port-label {
+  text-anchor: start;
+}
+.the-graph-foehn .outports .port-label {
+  text-anchor: end;
+}
+.the-graph-foehn .big .port-label {
+  visibility: visible;
+}
+.the-graph-foehn .big .ex-inports .port-label,
+.the-graph-foehn .big .ex-outports .port-label {
+  visibility: hidden;
+}
+.the-graph-foehn .group-box {
+  fill: rgba(191,191,191,0.15);
+  transition-property: fill;
+  transition-duration: 0.3s;
+}
+.the-graph-foehn .group-box:hover {
+  fill: rgba(191,191,191,0.25);
+}
+.the-graph-foehn .small .group-box {
+  stroke-width: 8px;
+}
+.the-graph-foehn .group-box.color0 {
+  fill: rgba(191,191,191,0.15);
+  stroke: none;
+}
+.the-graph-foehn .group-box.color1 {
+  fill: rgba(255,128,128,0.15);
+  stroke: none;
+}
+.the-graph-foehn .group-box.color2 {
+  fill: rgba(255,202,128,0.15);
+  stroke: none;
+}
+.the-graph-foehn .group-box.color3 {
+  fill: rgba(255,255,128,0.15);
+  stroke: none;
+}
+.the-graph-foehn .group-box.color4 {
+  fill: rgba(128,255,159,0.15);
+  stroke: none;
+}
+.the-graph-foehn .group-box.color5 {
+  fill: rgba(128,255,212,0.15);
+  stroke: none;
+}
+.the-graph-foehn .group-box.color6 {
+  fill: rgba(128,244,255,0.15);
+  stroke: none;
+}
+.the-graph-foehn .group-box.color7 {
+  fill: rgba(128,191,255,0.15);
+  stroke: none;
+}
+.the-graph-foehn .group-box.color8 {
+  fill: rgba(223,128,255,0.15);
+  stroke: none;
+}
+.the-graph-foehn .group-box.color9 {
+  fill: rgba(255,128,234,0.15);
+  stroke: none;
+}
+.the-graph-foehn .group-box.color10 {
+  fill: rgba(255,128,181,0.15);
+  stroke: none;
+}
+.the-graph-foehn .group-box.color0:hover {
+  fill: rgba(191,191,191,0.25);
+}
+.the-graph-foehn .group-box.color1:hover {
+  fill: rgba(255,128,128,0.25);
+}
+.the-graph-foehn .group-box.color2:hover {
+  fill: rgba(255,202,128,0.25);
+}
+.the-graph-foehn .group-box.color3:hover {
+  fill: rgba(255,255,128,0.25);
+}
+.the-graph-foehn .group-box.color4:hover {
+  fill: rgba(128,255,159,0.25);
+}
+.the-graph-foehn .group-box.color5:hover {
+  fill: rgba(128,255,212,0.25);
+}
+.the-graph-foehn .group-box.color6:hover {
+  fill: rgba(128,244,255,0.25);
+}
+.the-graph-foehn .group-box.color7:hover {
+  fill: rgba(128,191,255,0.25);
+}
+.the-graph-foehn .group-box.color8:hover {
+  fill: rgba(223,128,255,0.25);
+}
+.the-graph-foehn .group-box.color9:hover {
+  fill: rgba(255,128,234,0.25);
+}
+.the-graph-foehn .group-box.color10:hover {
+  fill: rgba(255,128,181,0.25);
+}
+.the-graph-foehn .selection .group-box.color0 {
+  fill: rgba(191,191,191,0.1);
+}
+.the-graph-foehn .selection .group-box.color1 {
+  fill: rgba(255,128,128,0.1);
+}
+.the-graph-foehn .selection .group-box.color2 {
+  fill: rgba(255,202,128,0.1);
+}
+.the-graph-foehn .selection .group-box.color3 {
+  fill: rgba(255,255,128,0.1);
+}
+.the-graph-foehn .selection .group-box.color4 {
+  fill: rgba(128,255,159,0.1);
+}
+.the-graph-foehn .selection .group-box.color5 {
+  fill: rgba(128,255,212,0.1);
+}
+.the-graph-foehn .selection .group-box.color6 {
+  fill: rgba(128,244,255,0.1);
+}
+.the-graph-foehn .selection .group-box.color7 {
+  fill: rgba(128,191,255,0.1);
+}
+.the-graph-foehn .selection .group-box.color8 {
+  fill: rgba(223,128,255,0.1);
+}
+.the-graph-foehn .selection .group-box.color9 {
+  fill: rgba(255,128,234,0.1);
+}
+.the-graph-foehn .selection .group-box.color10 {
+  fill: rgba(255,128,181,0.1);
+}
+.the-graph-foehn .selection .group-box.selection {
+  fill: rgba(255,255,255,0.15);
+  stroke: #e6e6e6;
+  stroke-width: 1px;
+}
+.the-graph-foehn .selection .group-box.selection:hover {
+  fill: rgba(255,255,255,0.25);
+}
+.the-graph-foehn .group-label {
+  text-anchor: start;
+  fill: #fff;
+  font-size: 20px;
+  transition-property: font-size;
+  transition-duration: 0.5s;
+}
+.the-graph-foehn .small .group-label {
+  font-size: 30px;
+  transition-property: font-size;
+  transition-duration: 0.5s;
+}
+.the-graph-foehn .group-description {
+  fill: #fff;
+  font-size: 12px;
+  text-anchor: start;
+}
+.the-graph-foehn .small .group-description {
+  visibility: hidden;
+}
+.the-graph-foehn .stroke,
+.the-graph-foehn .stroke.route0,
+.the-graph-foehn .selection .selected .stroke,
+.the-graph-foehn .selection .selected .stroke.route0 {
+  stroke: #fff;
+}
+.the-graph-foehn .stroke.route1,
+.the-graph-foehn .selection .selected .stroke.route1 {
+  stroke: #e80202;
+}
+.the-graph-foehn .stroke.route2,
+.the-graph-foehn .selection .selected .stroke.route2 {
+  stroke: #e88802;
+}
+.the-graph-foehn .stroke.route3,
+.the-graph-foehn .selection .selected .stroke.route3 {
+  stroke: #e8e802;
+}
+.the-graph-foehn .stroke.route4,
+.the-graph-foehn .selection .selected .stroke.route4 {
+  stroke: #02e83c;
+}
+.the-graph-foehn .stroke.route5,
+.the-graph-foehn .selection .selected .stroke.route5 {
+  stroke: #02e89c;
+}
+.the-graph-foehn .stroke.route6,
+.the-graph-foehn .selection .selected .stroke.route6 {
+  stroke: #02d5e8;
+}
+.the-graph-foehn .stroke.route7,
+.the-graph-foehn .selection .selected .stroke.route7 {
+  stroke: #0275e8;
+}
+.the-graph-foehn .stroke.route8,
+.the-graph-foehn .selection .selected .stroke.route8 {
+  stroke: #af02e8;
+}
+.the-graph-foehn .stroke.route9,
+.the-graph-foehn .selection .selected .stroke.route9 {
+  stroke: #e802c2;
+}
+.the-graph-foehn .stroke.route10,
+.the-graph-foehn .selection .selected .stroke.route10 {
+  stroke: #e80262;
+}
+.the-graph-foehn .selection .stroke,
+.the-graph-foehn .selection .stroke.route0 {
+  stroke: #757575;
+}
+.the-graph-foehn .selection .stroke.route1 {
+  stroke: #510101;
+}
+.the-graph-foehn .selection .stroke.route2 {
+  stroke: #512f01;
+}
+.the-graph-foehn .selection .stroke.route3 {
+  stroke: #515101;
+}
+.the-graph-foehn .selection .stroke.route4 {
+  stroke: #015115;
+}
+.the-graph-foehn .selection .stroke.route5 {
+  stroke: #015136;
+}
+.the-graph-foehn .selection .stroke.route6 {
+  stroke: #014a51;
+}
+.the-graph-foehn .selection .stroke.route7 {
+  stroke: #012951;
+}
+.the-graph-foehn .selection .stroke.route8 {
+  stroke: #3d0151;
+}
+.the-graph-foehn .selection .stroke.route9 {
+  stroke: #510143;
+}
+.the-graph-foehn .selection .stroke.route10 {
+  stroke: #510122;
+}
+.the-graph-foehn .fill.route0 {
+  fill: #fff;
+}
+.the-graph-foehn .fill.route1 {
+  fill: #e80202;
+}
+.the-graph-foehn .fill.route2 {
+  fill: #e88802;
+}
+.the-graph-foehn .fill.route3 {
+  fill: #e8e802;
+}
+.the-graph-foehn .fill.route4 {
+  fill: #02e83c;
+}
+.the-graph-foehn .fill.route5 {
+  fill: #02e89c;
+}
+.the-graph-foehn .fill.route6 {
+  fill: #02d5e8;
+}
+.the-graph-foehn .fill.route7 {
+  fill: #0275e8;
+}
+.the-graph-foehn .fill.route8 {
+  fill: #af02e8;
+}
+.the-graph-foehn .fill.route9 {
+  fill: #e802c2;
+}
+.the-graph-foehn .fill.route10 {
+  fill: #e80262;
+}
+@-moz-keyframes error {
+  0% {
+    fill: #feffff;
+  }
+
+  100% {
+    fill: rgba(255,0,0,0.94);
+  }
+}
+@-webkit-keyframes error {
+  0% {
+    fill: #feffff;
+  }
+
+  100% {
+    fill: rgba(255,0,0,0.94);
+  }
+}
+@-o-keyframes error {
+  0% {
+    fill: #feffff;
+  }
+
+  100% {
+    fill: rgba(255,0,0,0.94);
+  }
+}
+@-ms-keyframes error {
+  0% {
+    fill: #feffff;
+  }
+
+  100% {
+    fill: rgba(255,0,0,0.94);
+  }
+}
+@keyframes error {
+  0% {
+    fill: #feffff;
+  }
+
+  100% {
+    fill: rgba(255,0,0,0.94);
+  }
+}
+@-moz-keyframes heartbeats {
+  0% {
+    stroke-width: 12px;
+  }
+
+  10% {
+    stroke-width: 18px;
+  }
+
+  30% {
+    stroke-width: 12px;
+  }
+
+  40% {
+    stroke-width: 18px;
+  }
+
+  60% {
+    stroke-width: 12px;
+  }
+}
+@-webkit-keyframes heartbeats {
+  0% {
+    stroke-width: 12px;
+  }
+
+  10% {
+    stroke-width: 18px;
+  }
+
+  30% {
+    stroke-width: 12px;
+  }
+
+  40% {
+    stroke-width: 18px;
+  }
+
+  60% {
+    stroke-width: 12px;
+  }
+}
+@-o-keyframes heartbeats {
+  0% {
+    stroke-width: 12px;
+  }
+
+  10% {
+    stroke-width: 18px;
+  }
+
+  30% {
+    stroke-width: 12px;
+  }
+
+  40% {
+    stroke-width: 18px;
+  }
+
+  60% {
+    stroke-width: 12px;
+  }
+}
+@-ms-keyframes heartbeats {
+  0% {
+    stroke-width: 12px;
+  }
+
+  10% {
+    stroke-width: 18px;
+  }
+
+  30% {
+    stroke-width: 12px;
+  }
+
+  40% {
+    stroke-width: 18px;
+  }
+
+  60% {
+    stroke-width: 12px;
+  }
+}
+@keyframes heartbeats {
+  0% {
+    stroke-width: 12px;
+  }
+
+  10% {
+    stroke-width: 18px;
+  }
+
+  30% {
+    stroke-width: 12px;
+  }
+
+  40% {
+    stroke-width: 18px;
+  }
+
+  60% {
+    stroke-width: 12px;
+  }
+}
