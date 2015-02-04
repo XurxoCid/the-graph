@@ -86,6 +86,7 @@
        */
       if (this.props.label === "DDI") {
         delete this.props.menu['w4']
+        delete this.props.menu['s4']
       };
 
       var menuOptions = {
