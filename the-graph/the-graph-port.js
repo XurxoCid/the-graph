@@ -46,11 +46,16 @@
       this.getDOMNode().addEventListener("trackend", this.triggerDropOnTarget);
       this.getDOMNode().addEventListener("the-graph-edge-drop", this.edgeStart);
 
+      /*
+      * RESTRICTION: 
+      * The only option in a portr is "EXPORT" and we don't want that
+      * therefore, we drop this option 
+      */
       // Show context menu
-      if (this.props.showContext) {
-        this.getDOMNode().addEventListener("contextmenu", this.showContext);
-        this.getDOMNode().addEventListener("hold", this.showContext);
-      }
+      // if (this.props.showContext) {
+      //  this.getDOMNode().addEventListener("contextmenu", this.showContext);
+      //  this.getDOMNode().addEventListener("hold", this.showContext);
+      // }
     },
     getTooltipTrigger: function () {
       return this.getDOMNode();
