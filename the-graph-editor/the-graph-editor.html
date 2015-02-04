@@ -80,6 +80,18 @@
             }
           },
           node: {
+            /*
+             * PLUGIN: 
+             * Include a option to open config menu panel according to the
+             * type of box 
+             */
+            n4: {
+              icon: "gear",
+              iconLabel: "config",
+              action: function (graph, itemKey, item) {
+                graph.displayMenu(graph, itemKey, item);
+              }.bind(this) 
+            },
             s4: {
               icon: "trash-o",
               iconLabel: "delete",
