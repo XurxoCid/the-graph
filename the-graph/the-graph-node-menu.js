@@ -80,6 +80,14 @@
       outportsOptions = TheGraph.merge(TheGraph.config.nodeMenu.outports, outportsOptions);
       var outports = TheGraph.factories.nodeMenu.createNodeMenuOutports.call(this, outportsOptions);
 
+      /*
+       * PLUGIN:
+       * DDI is a box which can't be copied
+       */
+      if (this.props.label === "DDI") {
+        delete this.props.menu['w4']
+      };
+
       var menuOptions = {
         menu: this.props.menu,
         options: this.props.options,
