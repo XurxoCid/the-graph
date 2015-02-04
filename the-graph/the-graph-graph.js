@@ -176,7 +176,16 @@
       this.markDirty();
     },
     addEdge: function (edge) {
-      this.state.graph.addEdge(edge.from.process, edge.from.port, edge.to.process, edge.to.port, edge.metadata);
+      /*
+      * RESTRICTION: 
+      * No possible to add a edge if the inport and the outport 
+      * are in the same process
+      */
+      if (edge.from.process !== edge.to.process) {
+        this.state.graph.addEdge(edge.from.process, edge.from.port, edge.to.process, edge.to.port, edge.metadata);
+      } else {
+        alert('Sorry: not allowed this kind of loops!!!!')
+      }
     },
     moveGroup: function (nodes, dx, dy) {
       var graph = this.state.graph;
