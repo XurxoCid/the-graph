@@ -110,6 +110,19 @@
       if (this.props.isExport) {
         return;
       }
+      /*
+      * RESTRICTION:
+      * If it is a (inbound) port and there is already a link, we can't
+      * create a new one
+      */
+      console.log('Starting a new edge...');
+      for (var i in editor.nofloGraph.edges) {
+        var edge = editor.nofloGraph.edges[i];
+        if ((( this.props.port.port == edge.from.port ) && ( this.props.port.process == edge.from.node ))) {
+          return;
+        }
+      }
+
       // Click on label, pass context menu to node
       if (event && (event.target === this.refs.label.getDOMNode())) {
         return;
