@@ -111,12 +111,13 @@
         return;
       }
       /*
-      * RESTRICTION:
-      * If it is a (inbound) port and there is already a link, we can't
-      * create a new one
+      * FOEHN-RESTRICTION: 
+      * If it is a (inbound) port and there is already a link,
+      * we can't create a new one
       */
-      for (var i in editor.nofloGraph.edges) {
-        var edge = editor.nofloGraph.edges[i];
+      var graph = this.props.graph;
+      for (var i in graph.edges) {
+        var edge = graph.edges[i];
         if ((( this.props.port.port == edge.from.port ) && ( this.props.port.process == edge.from.node ))) {
           return;
         }
