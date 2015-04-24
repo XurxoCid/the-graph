@@ -184,7 +184,7 @@
       if (edge.from.process !== edge.to.process) {
         this.state.graph.addEdge(edge.from.process, edge.from.port, edge.to.process, edge.to.port, edge.metadata);
       } else {
-        alert('Sorry: not allowed this kind of loops!!!!')
+        alert('Sorry: not allowed this kind of loops!!!!');
       }
     },
     moveGroup: function (nodes, dx, dy) {

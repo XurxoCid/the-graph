@@ -78,4 +78,39 @@
     return pasted;
   };
 
+  
+  TheGraph.Clipboard.displayMenu =  function(graph, node) {
+
+    // prepare a few items for the footer toolbar
+    var btnClose = {
+        item:     '<button class="button tiny success"> </i></button>',
+        event:    'click',
+        btnclass: 'custombutton',
+        btntext:  'close',
+        callback: function (event) {event.data.close(); }
+    };
+    var btnOk =  {
+        item:     '<button class="button tiny success"></button>',
+        event:    'click',
+        btnclass: 'custombutton',
+        btntext:  'submit',
+        callback: function (event) {
+            event.data.content.append("<p style='padding:20px;text-align:center;'>And this was a click on the OK button!</p>");
+        }
+    };
+
+    // the footer toolbar
+    var footerToolbar = [ btnClose, btnOk ];
+    var panel = $.jsPanel({
+      toolbarFooter: footerToolbar,
+      title:    node.metadata.label + ": configuration box",
+      size:     { width:  400, height: 200 },
+      position: 'center',
+      theme:    'medium'
+    }); 
+    panel.content.append("<p style='...'><i>jsPanel</i>.status: " + panel.status + "</p>");
+
+  };
+
+
 })(this);

@@ -85,9 +85,15 @@
        * DDI is a box which can't be copied
        */
       if (this.props.label === "DDI") {
-        delete this.props.menu['w4']
-        delete this.props.menu['s4']
-      };
+        if (this.props.menu) {
+          if (this.props.menu.w4) {
+            delete this.props.menu.w4;
+          }
+          if (this.props.menu.s4) {
+            delete this.props.menu.s4;
+          }
+        }
+      }
 
       var menuOptions = {
         menu: this.props.menu,

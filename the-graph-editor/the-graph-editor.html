@@ -54,6 +54,14 @@
           iconLabel: "paste",
           action: pasteAction
         };
+        var displayMenuAction = function(graph, itemKey, item) {
+          var displayed = TheGraph.Clipboard.displayMenu(graph, item);
+        }.bind(this);
+        var displayMenu = {
+          icon: "config",
+          iconLabel: "config",
+          action: displayMenuAction
+        };
         // Default context menu defs
         this.menus = {
           main: {
@@ -86,14 +94,14 @@
              * type of box 
              */
             n4: {
-              icon: "gear",
+              icon: "config",
               iconLabel: "config",
               action: function (graph, itemKey, item) {
-                graph.displayMenu(graph, itemKey, item);
-              }.bind(this) 
+                 TheGraph.Clipboard.displayMenu(graph, item);
+               }.bind(this) 
             },
             s4: {
-              icon: "trash-o",
+              icon: "trash",
               iconLabel: "delete",
               action: function (graph, itemKey, item) {
                 graph.removeNode(itemKey);
@@ -108,6 +116,7 @@
                 this.selectedNodes = newSelection;
               }.bind(this)
             },
+            /*
             w4: {
               icon: "copy",
               iconLabel: "copy",
@@ -115,6 +124,7 @@
                 TheGraph.Clipboard.copy(graph, [itemKey]);
               }
             }
+            */
           },
           nodeInport: {
             w4: {
@@ -292,7 +302,7 @@
         nofloGraph.nodes.forEach(function (node) {
           var component = {
             name: node.component,
-            icon: 'cog',
+            icon: 'config',
             description: '',
             inports: [],
             outports: []

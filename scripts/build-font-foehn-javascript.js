@@ -35,7 +35,7 @@ var generateFile = function (err, data) {
     if (err) {
       throw err;
     }
-    console.log('Font Awesome icons map saved with ' + Object.keys(icons).length + ' icons and aliases.');
+    console.log('Font Foehn icons map saved with ' + Object.keys(icons).length + ' icons and aliases.');
   });
 };
 

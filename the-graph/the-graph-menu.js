@@ -88,7 +88,7 @@
         var sliceIconTextOptions = {
           x: TheGraph.config.menu.positions[direction+"IconX"],
           y: TheGraph.config.menu.positions[direction+"IconY"],
-          children: TheGraph.FONT_AWESOME[ slice.icon ]
+          children: TheGraph.FONT_FOEHN[ slice.icon ]
         };
         sliceIconTextOptions = TheGraph.merge(TheGraph.config.menu.sliceIconText, sliceIconTextOptions);
         children.push(TheGraph.factories.menu.createMenuSliceIconText.call(this, sliceIconTextOptions));
