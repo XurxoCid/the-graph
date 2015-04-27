@@ -73,11 +73,11 @@ var jsPanel;
                     '<div class="jsPanel-hdr jsPanel-theme-default">' +
                         '<h3 class="jsPanel-title"></h3>' +
                         '<div class="jsPanel-hdr-r">' +
-                            '<div class="jsPanel-btn-close"><span class="jsglyph jsglyph-remove"></span></div>' +
-                            '<div class="jsPanel-btn-max"><span class="jsglyph jsglyph-maximize"></span></div>' +
-                            '<div class="jsPanel-btn-norm"><span class="jsglyph jsglyph-normalize"></span></div>' +
-                            '<div class="jsPanel-btn-min"><span class="jsglyph jsglyph-minimize"></span></div>' +
-                            '<div class="jsPanel-btn-small"><span class="jsglyph jsglyph-chevron-up"></span></div>' +
+                        //    '<div class="jsPanel-btn-close"><span class="jsglyph jsglyph-remove"></span></div>' +
+                        //    '<div class="jsPanel-btn-max"><span class="jsglyph jsglyph-maximize"></span></div>' +
+                        //    '<div class="jsPanel-btn-norm"><span class="jsglyph jsglyph-normalize"></span></div>' +
+                        //    '<div class="jsPanel-btn-min"><span class="jsglyph jsglyph-minimize"></span></div>' +
+                        //    '<div class="jsPanel-btn-small"><span class="jsglyph jsglyph-chevron-up"></span></div>' +
                             '<div class="jsPanel-btn-smallrev"><span class="jsglyph jsglyph-chevron-down"></span></div>' +
                         '</div>' +
                         '<div class="jsPanel-hdr-toolbar jsPanel-clearfix"></div>' +
