@@ -21,9 +21,6 @@
   };
 
   TheGraph.Clipboard.copy = function (graph, keys) {
-    //Duplicate all the nodes before putting them in clipboard
-    //this will make this work also with cut/Paste and once we
-    //decide if/how we will implement cross-document copy&paste will work there too
     clipboardContent = {nodes:[], edges:[]};
     var map = {};
     var i, len;
@@ -45,7 +42,6 @@
         clipboardContent.edges.push(newEdge);
       }
     }
-
   };
 
   TheGraph.Clipboard.paste = function (graph) {
@@ -78,37 +74,63 @@
     return pasted;
   };
 
-  
   TheGraph.Clipboard.displayMenu =  function(graph, node) {
 
-    // prepare a few items for the footer toolbar
-    var btnClose = {
-        item:     '<button class="button tiny success"> </i></button>',
-        event:    'click',
-        btnclass: 'custombutton',
-        btntext:  'close',
-        callback: function (event) {event.data.close(); }
-    };
-    var btnOk =  {
-        item:     '<button class="button tiny success"></button>',
-        event:    'click',
-        btnclass: 'custombutton',
-        btntext:  'submit',
-        callback: function (event) {
-            event.data.content.append("<p style='padding:20px;text-align:center;'>And this was a click on the OK button!</p>");
-        }
+    $('#modalForm').empty();
+    if ( isNaN(node.component.substring(node.component.length-2,node.component.length)) ) {
+        name = node.component;
+    } else {
+        name = node.component.substring(0,node.component.length-2);
     };
 
-    // the footer toolbar
-    var footerToolbar = [ btnClose, btnOk ];
-    var panel = $.jsPanel({
-      toolbarFooter: footerToolbar,
-      title:    node.metadata.label + ": configuration box",
-      size:     { width:  400, height: 200 },
-      position: 'center',
-      theme:    'medium'
-    }); 
-    panel.content.append("<p style='...'><i>jsPanel</i>.status: " + panel.status + "</p>");
+    var requireAjaxRequest = [
+      "ddi", "schedule", "ivr", "device", "user",
+      "queue", "voicemail", "playback",
+    ];
+
+    if (requireAjaxRequest.indexOf(name)>= 0) {
+      $.ajax({
+        url: "/webadmin/inroutes/components/"+name+"s/",
+        type : "GET",
+        dataType: "json",
+        data : {
+          csrfmiddlewaretoken: $.cookie('csrftoken'),
+          current_tenant: localStorage.getItem("current_tenant"),
+        }
+      })
+      .done(function( data, textStatus, jqXHR){
+          var panel = createForm(node, data, editor);
+          $('#modalTitle').html(panel.title);
+          $('#modalForm').append(panel.content);
+          activateEvents(node, data);
+          $('#myModal').modal('toggle');
+          $('#saveNode').off();
+          $('#saveNode').click(function() {
+            saveForm(node, editor);
+            editor.rerender();
+            $('#myModal').modal('toggle');
+          });
+      })
+      .fail(function( jqXHR, textStatus, errorThrown){
+        console.log('ERROR');
+      });
+
+    } else {
+
+      var panel = createForm(node, null, editor);
+      $('#modalTitle').html(panel.title);
+      $('#modalForm').append(panel.content);
+      activateEvents(node, null);
+      $('#myModal').modal('toggle');
+      $('#saveNode').off();
+      $('#saveNode').click(function() {
+        saveForm(node, editor);
+        editor.rerender();
+        $('#myModal').modal('toggle');
+      });
+
+    };
+
 
   };
 

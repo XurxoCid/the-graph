@@ -84,19 +84,18 @@
        * PLUGIN:
        * DDI is a box which can't be copied
        */
+      var menu = {};
       if (this.props.label === "DDI") {
-        if (this.props.menu) {
-          if (this.props.menu.w4) {
-            delete this.props.menu.w4;
-          }
-          if (this.props.menu.s4) {
-            delete this.props.menu.s4;
-          }
-        }
-      }
+         menu['n4'] = this.props.menu.n4;
+      } if (this.props.label === "HANGUP") {
+         menu['s4'] = this.props.menu.s4;
+      } else {
+         menu['n4'] = this.props.menu.n4;
+         menu['s4'] = this.props.menu.s4;
+      };
 
       var menuOptions = {
-        menu: this.props.menu,
+        menu: menu,
         options: this.props.options,
         triggerHideContext: this.props.triggerHideContext,
         icon: this.props.icon,

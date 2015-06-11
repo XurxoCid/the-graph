@@ -21371,7 +21371,7 @@ function wrappy (fn, cb) {
 
 },{}],64:[function(require,module,exports){
 module.exports=require(10)
-},{"/home/foehn/rebuild_graph/the-graph/node_modules/grunt-browserify/node_modules/browserify/node_modules/inherits/inherits_browser.js":10}],65:[function(require,module,exports){
+},{"/opt/xpbx/backend/xpbx/the_graph/static/the-graph/node_modules/grunt-browserify/node_modules/browserify/node_modules/inherits/inherits_browser.js":10}],65:[function(require,module,exports){
 (function (process){
 module.exports = minimatch
 minimatch.Minimatch = Minimatch
@@ -22493,7 +22493,7 @@ var isArray = Array.isArray || function (xs) {
 
 },{}],69:[function(require,module,exports){
 module.exports=require(63)
-},{"/home/foehn/rebuild_graph/the-graph/node_modules/noflo/node_modules/read-installed/node_modules/read-package-json/node_modules/glob/node_modules/inflight/node_modules/wrappy/wrappy.js":63}],70:[function(require,module,exports){
+},{"/opt/xpbx/backend/xpbx/the_graph/static/the-graph/node_modules/noflo/node_modules/read-installed/node_modules/read-package-json/node_modules/glob/node_modules/inflight/node_modules/wrappy/wrappy.js":63}],70:[function(require,module,exports){
 var wrappy = require('wrappy')
 module.exports = wrappy(once)
 

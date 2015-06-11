@@ -22,6 +22,7 @@ context.TheGraph.FONT_FOEHN = {
   "more-reverse": "",
   "paste": "",
   "phonebook": "",
+  "pilot": "",
   "playback": "",
   "playback-2": "",
   "queue": "",
