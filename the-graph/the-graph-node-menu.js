@@ -87,7 +87,7 @@
       var menu = {};
       if (this.props.label === "DDI") {
          menu['n4'] = this.props.menu.n4;
-      } if (this.props.label === "HANGUP") {
+      } else if (this.props.label === "HANGUP") {
          menu['s4'] = this.props.menu.s4;
       } else {
          menu['n4'] = this.props.menu.n4;
