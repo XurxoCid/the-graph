@@ -85,7 +85,7 @@
 
     var requireAjaxRequest = [
       "ddi", "schedule", "ivr", "device", "user",
-      "queue", "voicemail", "playback", "script"
+      "queue", "voicemail", "playback", "script", "conference",
     ];
 
     if (requireAjaxRequest.indexOf(name)>= 0) {
