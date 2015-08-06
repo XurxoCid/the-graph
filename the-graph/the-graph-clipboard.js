@@ -75,7 +75,8 @@
   };
 
   TheGraph.Clipboard.displayMenu =  function(graph, node) {
-
+    
+    var editor = document.getElementById('editor');
     $('#modalForm').empty();
     if ( isNaN(node.component.substring(node.component.length-2,node.component.length)) ) {
         name = node.component;
