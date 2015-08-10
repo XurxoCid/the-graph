@@ -141,11 +141,11 @@
 
       @font-face {
   font-family: "font-foehn";
-  src: url("../fonts/font-foehn_5f75ec53d9d1664a3ea050c37540b3b5.eot");
-  src: url("../fonts/font-foehn_5f75ec53d9d1664a3ea050c37540b3b5.eot?#iefix") format("embedded-opentype"),
-       url("../fonts/font-foehn_5f75ec53d9d1664a3ea050c37540b3b5.woff") format("woff"),
-       url("../fonts/font-foehn_5f75ec53d9d1664a3ea050c37540b3b5.ttf") format("truetype"),
-       url("../fonts/font-foehn_5f75ec53d9d1664a3ea050c37540b3b5.svg#font-foehn") format("svg");
+  src: url("../fonts/font-foehn_3a232b6432bf78a4e3c27bbf611c85c4.eot");
+  src: url("../fonts/font-foehn_3a232b6432bf78a4e3c27bbf611c85c4.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/font-foehn_3a232b6432bf78a4e3c27bbf611c85c4.woff") format("woff"),
+       url("../fonts/font-foehn_3a232b6432bf78a4e3c27bbf611c85c4.ttf") format("truetype"),
+       url("../fonts/font-foehn_3a232b6432bf78a4e3c27bbf611c85c4.svg#font-foehn") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -153,7 +153,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: "font-foehn";
-    src: url("../fonts/font-foehn_5f75ec53d9d1664a3ea050c37540b3b5.svg#font-foehn") format("svg");
+    src: url("../fonts/font-foehn_3a232b6432bf78a4e3c27bbf611c85c4.svg#font-foehn") format("svg");
   }
 }
 
@@ -167,6 +167,7 @@
 .foehn-ddi:before,
 .foehn-directory:before,
 .foehn-extension:before,
+.foehn-fcode:before,
 .foehn-followme:before,
 .foehn-hangup:before,
 .foehn-hangup-2:before,
@@ -210,6 +211,7 @@
 .foehn-ddi:before { content: "\f104"; }
 .foehn-directory:before { content: "\f105"; }
 .foehn-extension:before { content: "\f106"; }
+.foehn-fcode:before { content: "\f11e"; }
 .foehn-followme:before { content: "\f107"; }
 .foehn-hangup:before { content: "\f10b"; }
 .foehn-hangup-2:before { content: "\f10c"; }
@@ -247,7 +249,7 @@
   <body class="characters-off">
     <div id="page" class="container">
       <header>
-        <h1>font-foehn contains 29 glyphs:</h1>
+        <h1>font-foehn contains 30 glyphs:</h1>
         <a onclick="toggleCharacters(); return false;" href="#">Toggle Preview Characters</a>
       </header>
 
@@ -340,6 +342,19 @@
         <div class="usage">
           <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".foehn-extension" />
           <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf106;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><span class="letters">Pp</span><i id="foehn-fcode" class="foehn-fcode"></i></span><span class="step size-14"><span class="letters">Pp</span><i id="foehn-fcode" class="foehn-fcode"></i></span><span class="step size-16"><span class="letters">Pp</span><i id="foehn-fcode" class="foehn-fcode"></i></span><span class="step size-18"><span class="letters">Pp</span><i id="foehn-fcode" class="foehn-fcode"></i></span><span class="step size-21"><span class="letters">Pp</span><i id="foehn-fcode" class="foehn-fcode"></i></span><span class="step size-24"><span class="letters">Pp</span><i id="foehn-fcode" class="foehn-fcode"></i></span><span class="step size-36"><span class="letters">Pp</span><i id="foehn-fcode" class="foehn-fcode"></i></span><span class="step size-48"><span class="letters">Pp</span><i id="foehn-fcode" class="foehn-fcode"></i></span><span class="step size-60"><span class="letters">Pp</span><i id="foehn-fcode" class="foehn-fcode"></i></span><span class="step size-72"><span class="letters">Pp</span><i id="foehn-fcode" class="foehn-fcode"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".foehn-fcode" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf11e;" />
         </div>
       </div>
       
