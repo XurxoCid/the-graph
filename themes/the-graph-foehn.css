@@ -29,36 +29,36 @@
   cursor: grab;
 }
 .the-graph-foehn .node-border {
-  fill: rgba(0,0,0,0.5);
-  stroke: #032536;
+  fill: #dbdddf;
+  stroke: #dbdddf;
   stroke-width: 2px;
 }
 .the-graph-foehn .node-rect {
-  fill: #feffff;
+  fill: #fff;
   stroke: none;
 }
 @-webkit-keyframes error {
   0% {
-    fill: #feffff;
+    fill: #fff;
   }
   100% {
-    fill: rgba(255,0,0,0.94);
+    fill: #ef9a9a;
   }
 }
 @-moz-keyframes error {
   0% {
-    fill: #feffff;
+    fill: #fff;
   }
   100% {
-    fill: rgba(255,0,0,0.94);
+    fill: #ef9a9a;
   }
 }
 @-o-keyframes error {
   0% {
-    fill: #feffff;
+    fill: #fff;
   }
   100% {
-    fill: rgba(255,0,0,0.94);
+    fill: #ef9a9a;
   }
 }
 .the-graph-foehn .node.error .node-rect {
@@ -69,20 +69,20 @@
   stroke: none;
 }
 .the-graph-foehn .node:hover .node-rect {
-  fill: rgba(230,238,240,0.97);
+  fill: #dbdddf;
 }
 .the-graph-foehn .node:hover .node-border {
-  stroke: #808080;
+  stroke: #dbdddf;
 }
 .the-graph-foehn .node:hover .port-arc {
-  fill: #808080;
+  fill: #dbdddf;
 }
 .the-graph-foehn .ex-inports .node-border {
-  fill: #1a1a1a;
+  fill: #fecb7f;
   stroke: none;
 }
 .the-graph-foehn .ex-outports .node-border {
-  fill: #1a1a1a;
+  fill: #fecb7f;
   stroke: none;
 }
 .the-graph-foehn .ex-inports .node .node-rect,
@@ -93,72 +93,72 @@
 }
 .the-graph-foehn .selection .ex-inports .node .node-border,
 .the-graph-foehn .selection .ex-outports .node .node-border {
-  fill: #1a1a1a;
+  fill: #fecb7f;
 }
 .the-graph-foehn .small .node-border {
-  fill: #feffff;
+  fill: #fff;
   stroke: none;
 }
 .the-graph-foehn .small .ex-inports .node .node-border,
 .the-graph-foehn .small .ex-outports .node .node-border {
-  fill: #1a1a1a;
+  fill: #fecb7f;
 }
 .the-graph-foehn .node-bg {
   opacity: 0;
 }
 .the-graph-foehn .selection .node .node-rect {
-  fill: rgba(61,66,67,0.94);
+  fill: #dbdddf;
 }
 .the-graph-foehn .selection .node .node-border {
-  stroke: #232829;
+  stroke: #dbdddf;
 }
 .the-graph-foehn .selection .node .port-arc {
-  fill: #232829;
+  fill: #dbdddf;
 }
 .the-graph-foehn .selection .node .node-icon {
-  fill: #232829;
+  fill: #b4bbc3;
 }
 .the-graph-foehn .selection .node.selected .node-rect {
-  fill: rgba(230,238,240,0.94);
+  fill: #40b2e9;
 }
 .the-graph-foehn .selection .node.selected .node-border {
-  stroke: #808080;
+  stroke: #fff;
 }
 .the-graph-foehn .selection .node.selected .port-arc {
-  fill: #808080;
+  fill: #fff;
 }
 .the-graph-foehn .selection .node.selected .node-icon {
-  fill: #5e6a6e;
+  fill: #fff;
 }
 .the-graph-foehn .selection .ex-inports .node .node-icon {
-  fill: #512f01;
+  fill: var-route02-fade;
 }
 .the-graph-foehn .selection .ex-outports .node .node-icon {
-  fill: #015115;
+  fill: var-route04-fade;
 }
 .the-graph-foehn .small .selection .node .node-rect {
   fill: none;
 }
 .the-graph-foehn .small .selection .node .node-border {
-  fill: rgba(61,66,67,0.94);
+  fill: #dbdddf;
   stroke: none;
 }
 .the-graph-foehn .small .selection .node.selected .node-rect {
   fill: none;
 }
 .the-graph-foehn .small .selection .node.selected .node-border {
-  fill: rgba(230,238,240,0.94);
+  fill: #40b2e9;
   stroke: none;
 }
 .the-graph-foehn path {
   fill: none;
 }
 .the-graph-foehn .edge-bg {
-  stroke: #000;
+  stroke: #dbdddf;
   stroke-width: 5px;
 }
 .the-graph-foehn .edge-fg {
-  stroke: #fff;
+  stroke: #dbdddf;
   stroke-width: 3px;
   transition-property: stroke-width;
   transition-duration: 0.5s;
@@ -168,7 +168,7 @@
   opacity: 0;
 }
 .the-graph-foehn .edge:hover .edge-bg {
-  stroke: #808080;
+  stroke: #dbdddf;
 }
 .the-graph-foehn .edge.selected .edge-bg {
   stroke-width: 8px;
@@ -241,15 +241,15 @@
   animation: heartbeats 1s linear infinite;
 }
 .the-graph-foehn text {
-  font-family: "SourceCodePro", "Source Code Pro", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", "SourceCodePro", "Source Code Pro", Helvetica, Arial, sans-serif;
   text-rendering: geometricPrecision; /* makes text scale smoothly */
   font-size: 14px;
-  fill: #fff;
+  fill: #354d66;
   text-anchor: middle;
   dominant-baseline: central;
 }
 .the-graph-foehn .text-bg-rect {
-  fill: rgba(0,0,0,0.5);
+  fill: #fff;
 }
 .the-graph-foehn .node-label,
 .the-graph-foehn .node-sublabel {
@@ -269,7 +269,7 @@
 }
 .the-graph-foehn .iip-path {
   stroke-width: 1px;
-  stroke: #fff;
+  stroke: #dbdddf;
 }
 .the-graph-foehn .iip-info {
   visibility: hidden;
@@ -291,11 +291,11 @@
 }
 .the-graph-foehn .context-node-icon {
   font-size: 30px;
-  fill: #fff;
+  fill: #354d66;
 }
 .the-graph-foehn .context-icon {
   font-size: 20px;
-  fill: #fff;
+  fill: #354d66;
 }
 .the-graph-foehn .context-node-label {
   text-anchor: middle;
@@ -336,7 +336,7 @@
   stroke: #bfbfbf;
 }
 .the-graph-foehn .context-port-label {
-  fill: #fff;
+  fill: #354d66;
   dominant-baseline: central;
 }
 .the-graph-foehn .context-port-in .context-port-label {
@@ -394,18 +394,18 @@
 }
 .the-graph-foehn .ex-inports .node-icon,
 .the-graph-foehn .small .ex-inports .node-icon {
-  fill: #e88802;
+  fill: #fecb7f;
 }
 .the-graph-foehn .ex-outports .node-icon,
 .the-graph-foehn .small .ex-outports .node-icon {
-  fill: #02e83c;
+  fill: var-route04;
 }
 .the-graph-foehn .port-circle-bg {
-  fill: #032536;
+  fill: #dbdddf;
   opacity: 0;
 }
 .the-graph-foehn .port-arc {
-  fill: #032536;
+  fill: #dbdddf;
 }
 .the-graph-foehn .port-circle-small {
   fill: none;
@@ -414,7 +414,7 @@
   visibility: hidden;
 }
 .the-graph-foehn .port-label {
-  fill: #0c0d0e;
+  fill: #303f9f;
   visibility: hidden;
   font-size: 6px;
   dominant-baseline: central;
@@ -433,125 +433,125 @@
   visibility: hidden;
 }
 .the-graph-foehn .group-box {
-  fill: rgba(191,191,191,0.15);
+  fill: #fff;
   transition-property: fill;
   transition-duration: 0.3s;
 }
 .the-graph-foehn .group-box:hover {
-  fill: rgba(191,191,191,0.25);
+  fill: rgba(219,211,223,0.2);
 }
 .the-graph-foehn .small .group-box {
   stroke-width: 8px;
 }
 .the-graph-foehn .group-box.color0 {
-  fill: rgba(191,191,191,0.15);
+  fill: #fff;
   stroke: none;
 }
 .the-graph-foehn .group-box.color1 {
-  fill: rgba(255,128,128,0.15);
+  fill: var-group01;
   stroke: none;
 }
 .the-graph-foehn .group-box.color2 {
-  fill: rgba(255,202,128,0.15);
+  fill: var-group02;
   stroke: none;
 }
 .the-graph-foehn .group-box.color3 {
-  fill: rgba(255,255,128,0.15);
+  fill: var-group03;
   stroke: none;
 }
 .the-graph-foehn .group-box.color4 {
-  fill: rgba(128,255,159,0.15);
-  stroke: none;
+  fill: var-group04;
+  stroke: var-group04-stroke;
 }
 .the-graph-foehn .group-box.color5 {
-  fill: rgba(128,255,212,0.15);
-  stroke: none;
+  fill: var-group05;
+  stroke: var-group05-stroke;
 }
 .the-graph-foehn .group-box.color6 {
-  fill: rgba(128,244,255,0.15);
-  stroke: none;
+  fill: var-group06;
+  stroke: var-group06-stroke;
 }
 .the-graph-foehn .group-box.color7 {
-  fill: rgba(128,191,255,0.15);
-  stroke: none;
+  fill: var-group07;
+  stroke: var-group07-stroke;
 }
 .the-graph-foehn .group-box.color8 {
-  fill: rgba(223,128,255,0.15);
-  stroke: none;
+  fill: var-group08;
+  stroke: var-group08-stroke;
 }
 .the-graph-foehn .group-box.color9 {
-  fill: rgba(255,128,234,0.15);
-  stroke: none;
+  fill: var-group09;
+  stroke: var-group09-stroke;
 }
 .the-graph-foehn .group-box.color10 {
-  fill: rgba(255,128,181,0.15);
-  stroke: none;
+  fill: var-group10;
+  stroke: var-group10-stroke;
 }
 .the-graph-foehn .group-box.color0:hover {
-  fill: rgba(191,191,191,0.25);
+  fill: rgba(219,211,223,0.2);
 }
 .the-graph-foehn .group-box.color1:hover {
-  fill: rgba(255,128,128,0.25);
+  fill: rgba(219,211,223,0.2);
 }
 .the-graph-foehn .group-box.color2:hover {
-  fill: rgba(255,202,128,0.25);
+  fill: rgba(219,211,223,0.2);
 }
 .the-graph-foehn .group-box.color3:hover {
-  fill: rgba(255,255,128,0.25);
+  fill: rgba(219,211,223,0.2);
 }
 .the-graph-foehn .group-box.color4:hover {
-  fill: rgba(128,255,159,0.25);
+  fill: var-group04-hover;
 }
 .the-graph-foehn .group-box.color5:hover {
-  fill: rgba(128,255,212,0.25);
+  fill: var-group05-hover;
 }
 .the-graph-foehn .group-box.color6:hover {
-  fill: rgba(128,244,255,0.25);
+  fill: var-group06-hover;
 }
 .the-graph-foehn .group-box.color7:hover {
-  fill: rgba(128,191,255,0.25);
+  fill: var-group07-hover;
 }
 .the-graph-foehn .group-box.color8:hover {
-  fill: rgba(223,128,255,0.25);
+  fill: var-group08-hover;
 }
 .the-graph-foehn .group-box.color9:hover {
-  fill: rgba(255,128,234,0.25);
+  fill: var-group09-hover;
 }
 .the-graph-foehn .group-box.color10:hover {
-  fill: rgba(255,128,181,0.25);
+  fill: var-group10-hover;
 }
 .the-graph-foehn .selection .group-box.color0 {
-  fill: rgba(191,191,191,0.1);
+  fill: var-group00-fade;
 }
 .the-graph-foehn .selection .group-box.color1 {
-  fill: rgba(255,128,128,0.1);
+  fill: var-group01-fade;
 }
 .the-graph-foehn .selection .group-box.color2 {
-  fill: rgba(255,202,128,0.1);
+  fill: var-group02-fade;
 }
 .the-graph-foehn .selection .group-box.color3 {
-  fill: rgba(255,255,128,0.1);
+  fill: var-group03-fade;
 }
 .the-graph-foehn .selection .group-box.color4 {
-  fill: rgba(128,255,159,0.1);
+  fill: var-group04-fade;
 }
 .the-graph-foehn .selection .group-box.color5 {
-  fill: rgba(128,255,212,0.1);
+  fill: var-group05-fade;
 }
 .the-graph-foehn .selection .group-box.color6 {
-  fill: rgba(128,244,255,0.1);
+  fill: var-group06-fade;
 }
 .the-graph-foehn .selection .group-box.color7 {
-  fill: rgba(128,191,255,0.1);
+  fill: var-group07-fade;
 }
 .the-graph-foehn .selection .group-box.color8 {
-  fill: rgba(223,128,255,0.1);
+  fill: var-group08-fade;
 }
 .the-graph-foehn .selection .group-box.color9 {
-  fill: rgba(255,128,234,0.1);
+  fill: var-group09-fade;
 }
 .the-graph-foehn .selection .group-box.color10 {
-  fill: rgba(255,128,181,0.1);
+  fill: var-group10-fade;
 }
 .the-graph-foehn .selection .group-box.selection {
   fill: rgba(255,255,255,0.15);
@@ -563,7 +563,7 @@
 }
 .the-graph-foehn .group-label {
   text-anchor: start;
-  fill: #fff;
+  fill: #354d66;
   font-size: 20px;
   transition-property: font-size;
   transition-duration: 0.5s;
@@ -574,7 +574,7 @@
   transition-duration: 0.5s;
 }
 .the-graph-foehn .group-description {
-  fill: #fff;
+  fill: #354d66;
   font-size: 12px;
   text-anchor: start;
 }
@@ -585,145 +585,145 @@
 .the-graph-foehn .stroke.route0,
 .the-graph-foehn .selection .selected .stroke,
 .the-graph-foehn .selection .selected .stroke.route0 {
-  stroke: #fff;
+  stroke: #dbdddf;
 }
 .the-graph-foehn .stroke.route1,
 .the-graph-foehn .selection .selected .stroke.route1 {
-  stroke: #e80202;
+  stroke: #14b9d6;
 }
 .the-graph-foehn .stroke.route2,
 .the-graph-foehn .selection .selected .stroke.route2 {
-  stroke: #e88802;
+  stroke: #fecb7f;
 }
 .the-graph-foehn .stroke.route3,
 .the-graph-foehn .selection .selected .stroke.route3 {
-  stroke: #e8e802;
+  stroke: #9fa8da;
 }
 .the-graph-foehn .stroke.route4,
 .the-graph-foehn .selection .selected .stroke.route4 {
-  stroke: #02e83c;
+  stroke: var-route04;
 }
 .the-graph-foehn .stroke.route5,
 .the-graph-foehn .selection .selected .stroke.route5 {
-  stroke: #02e89c;
+  stroke: var-route05;
 }
 .the-graph-foehn .stroke.route6,
 .the-graph-foehn .selection .selected .stroke.route6 {
-  stroke: #02d5e8;
+  stroke: var-route06;
 }
 .the-graph-foehn .stroke.route7,
 .the-graph-foehn .selection .selected .stroke.route7 {
-  stroke: #0275e8;
+  stroke: var-route07;
 }
 .the-graph-foehn .stroke.route8,
 .the-graph-foehn .selection .selected .stroke.route8 {
-  stroke: #af02e8;
+  stroke: var-route08;
 }
 .the-graph-foehn .stroke.route9,
 .the-graph-foehn .selection .selected .stroke.route9 {
-  stroke: #e802c2;
+  stroke: var-route09;
 }
 .the-graph-foehn .stroke.route10,
 .the-graph-foehn .selection .selected .stroke.route10 {
-  stroke: #e80262;
+  stroke: var-route10;
 }
 .the-graph-foehn .selection .stroke,
 .the-graph-foehn .selection .stroke.route0 {
-  stroke: #757575;
+  stroke: var-route00-fade;
 }
 .the-graph-foehn .selection .stroke.route1 {
-  stroke: #510101;
+  stroke: var-route01-fade;
 }
 .the-graph-foehn .selection .stroke.route2 {
-  stroke: #512f01;
+  stroke: var-route02-fade;
 }
 .the-graph-foehn .selection .stroke.route3 {
-  stroke: #515101;
+  stroke: var-route03-fade;
 }
 .the-graph-foehn .selection .stroke.route4 {
-  stroke: #015115;
+  stroke: var-route04-fade;
 }
 .the-graph-foehn .selection .stroke.route5 {
-  stroke: #015136;
+  stroke: var-route05-fade;
 }
 .the-graph-foehn .selection .stroke.route6 {
-  stroke: #014a51;
+  stroke: var-route06-fade;
 }
 .the-graph-foehn .selection .stroke.route7 {
-  stroke: #012951;
+  stroke: var-route07-fade;
 }
 .the-graph-foehn .selection .stroke.route8 {
-  stroke: #3d0151;
+  stroke: var-route08-fade;
 }
 .the-graph-foehn .selection .stroke.route9 {
-  stroke: #510143;
+  stroke: var-route09-fade;
 }
 .the-graph-foehn .selection .stroke.route10 {
-  stroke: #510122;
+  stroke: var-route10-fade;
 }
 .the-graph-foehn .fill.route0 {
-  fill: #fff;
+  fill: #dbdddf;
 }
 .the-graph-foehn .fill.route1 {
-  fill: #e80202;
+  fill: #14b9d6;
 }
 .the-graph-foehn .fill.route2 {
-  fill: #e88802;
+  fill: #fecb7f;
 }
 .the-graph-foehn .fill.route3 {
-  fill: #e8e802;
+  fill: #9fa8da;
 }
 .the-graph-foehn .fill.route4 {
-  fill: #02e83c;
+  fill: var-route04;
 }
 .the-graph-foehn .fill.route5 {
-  fill: #02e89c;
+  fill: var-route05;
 }
 .the-graph-foehn .fill.route6 {
-  fill: #02d5e8;
+  fill: var-route06;
 }
 .the-graph-foehn .fill.route7 {
-  fill: #0275e8;
+  fill: var-route07;
 }
 .the-graph-foehn .fill.route8 {
-  fill: #af02e8;
+  fill: var-route08;
 }
 .the-graph-foehn .fill.route9 {
-  fill: #e802c2;
+  fill: var-route09;
 }
 .the-graph-foehn .fill.route10 {
-  fill: #e80262;
+  fill: var-route10;
 }
 @-moz-keyframes error {
   0% {
-    fill: #feffff;
+    fill: #fff;
   }
   100% {
-    fill: rgba(255,0,0,0.94);
+    fill: #ef9a9a;
   }
 }
 @-webkit-keyframes error {
   0% {
-    fill: #feffff;
+    fill: #fff;
   }
   100% {
-    fill: rgba(255,0,0,0.94);
+    fill: #ef9a9a;
   }
 }
 @-o-keyframes error {
   0% {
-    fill: #feffff;
+    fill: #fff;
   }
   100% {
-    fill: rgba(255,0,0,0.94);
+    fill: #ef9a9a;
   }
 }
 @keyframes error {
   0% {
-    fill: #feffff;
+    fill: #fff;
   }
   100% {
-    fill: rgba(255,0,0,0.94);
+    fill: #ef9a9a;
   }
 }
 @-moz-keyframes heartbeats {

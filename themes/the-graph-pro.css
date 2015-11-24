@@ -241,7 +241,7 @@
   animation: heartbeats 1s linear infinite;
 }
 .the-graph-pro text {
-  font-family: "SourceCodePro", "Source Code Pro", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", "SourceCodePro", "Source Code Pro", Helvetica, Arial, sans-serif;
   text-rendering: geometricPrecision; /* makes text scale smoothly */
   font-size: 14px;
   fill: #fff;
