@@ -4,11 +4,11 @@
 
 @font-face {
   font-family: "font-foehn";
-  src: url("font-foehn_3a232b6432bf78a4e3c27bbf611c85c4.eot");
-  src: url("font-foehn_3a232b6432bf78a4e3c27bbf611c85c4.eot?#iefix") format("embedded-opentype"),
-       url("font-foehn_3a232b6432bf78a4e3c27bbf611c85c4.woff") format("woff"),
-       url("font-foehn_3a232b6432bf78a4e3c27bbf611c85c4.ttf") format("truetype"),
-       url("font-foehn_3a232b6432bf78a4e3c27bbf611c85c4.svg#font-foehn") format("svg");
+  src: url("font-foehn_5ae458c62ae2754add473e68b5e33def.eot");
+  src: url("font-foehn_5ae458c62ae2754add473e68b5e33def.eot?#iefix") format("embedded-opentype"),
+       url("font-foehn_5ae458c62ae2754add473e68b5e33def.woff") format("woff"),
+       url("font-foehn_5ae458c62ae2754add473e68b5e33def.ttf") format("truetype"),
+       url("font-foehn_5ae458c62ae2754add473e68b5e33def.svg#font-foehn") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -16,43 +16,70 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: "font-foehn";
-    src: url("font-foehn_3a232b6432bf78a4e3c27bbf611c85c4.svg#font-foehn") format("svg");
+    src: url("font-foehn_5ae458c62ae2754add473e68b5e33def.svg#font-foehn") format("svg");
   }
 }
 
 [data-icon]:before { content: attr(data-icon); }
 
 [data-icon]:before,
+.foehn-billing-rates:before,
+.foehn-call-records:before,
 .foehn-callfwd:before,
+.foehn-cdr-statistics:before,
 .foehn-conference:before,
 .foehn-config:before,
+.foehn-connector:before,
 .foehn-copy:before,
+.foehn-dashboard:before,
 .foehn-ddi:before,
 .foehn-directory:before,
+.foehn-dlrule:before,
+.foehn-dlrule-2:before,
+.foehn-dlrulegrp:before,
+.foehn-entities:before,
 .foehn-extension:before,
 .foehn-fcode:before,
 .foehn-followme:before,
 .foehn-hangup:before,
 .foehn-hangup-2:before,
+.foehn-inbound:before,
 .foehn-ivr:before,
+.foehn-logout:before,
+.foehn-mailbox:before,
+.foehn-managers:before,
 .foehn-mobile-twinning:before,
+.foehn-moh:before,
 .foehn-more:before,
 .foehn-more-reverse:before,
+.foehn-music-hold:before,
+.foehn-outbound:before,
 .foehn-paste:before,
 .foehn-phonebook:before,
+.foehn-pickupgroup:before,
 .foehn-pilot:before,
 .foehn-playback:before,
 .foehn-playback-2:before,
 .foehn-prefix:before,
 .foehn-queue:before,
+.foehn-queuemetrics:before,
+.foehn-recorded-calls:before,
+.foehn-reseller:before,
 .foehn-ringgroup:before,
 .foehn-schedule:before,
 .foehn-script:before,
 .foehn-set-callerid:before,
+.foehn-statistics:before,
+.foehn-supervisors:before,
+.foehn-supervisors_round:before,
+.foehn-tenants:before,
 .foehn-trash:before,
 .foehn-userextension:before,
+.foehn-userextenteam:before,
 .foehn-userprofile:before,
-.foehn-voicemail:before {
+.foehn-users:before,
+.foehn-voicemail:before,
+.foehn-vrecords:before {
   display: inline-block;
   font-family: "font-foehn";
   font-style: normal;
@@ -67,64 +94,118 @@
   font-smoothing: antialiased;
 }
 
+.foehn-billing-rates:before { content: "\f127"; }
+.foehn-call-records:before { content: "\f135"; }
 .foehn-callfwd:before { content: "\f100"; }
+.foehn-cdr-statistics:before { content: "\f137"; }
 .foehn-conference:before { content: "\f11b"; }
 .foehn-config:before { content: "\f102"; }
+.foehn-connector:before { content: "\f133"; }
 .foehn-copy:before { content: "\f103"; }
+.foehn-dashboard:before { content: "\f12a"; }
 .foehn-ddi:before { content: "\f104"; }
 .foehn-directory:before { content: "\f105"; }
+.foehn-dlrule:before { content: "\f11f"; }
+.foehn-dlrule-2:before { content: "\f120"; }
+.foehn-dlrulegrp:before { content: "\f121"; }
+.foehn-entities:before { content: "\f134"; }
 .foehn-extension:before { content: "\f106"; }
 .foehn-fcode:before { content: "\f11e"; }
 .foehn-followme:before { content: "\f107"; }
 .foehn-hangup:before { content: "\f10b"; }
 .foehn-hangup-2:before { content: "\f10c"; }
+.foehn-inbound:before { content: "\f131"; }
 .foehn-ivr:before { content: "\f10d"; }
+.foehn-logout:before { content: "\f122"; }
+.foehn-mailbox:before { content: "\f130"; }
+.foehn-managers:before { content: "\f13a"; }
 .foehn-mobile-twinning:before { content: "\f114"; }
+.foehn-moh:before { content: "\f123"; }
 .foehn-more:before { content: "\f115"; }
 .foehn-more-reverse:before { content: "\f116"; }
+.foehn-music-hold:before { content: "\f12f"; }
+.foehn-outbound:before { content: "\f132"; }
 .foehn-paste:before { content: "\f117"; }
 .foehn-phonebook:before { content: "\f10e"; }
+.foehn-pickupgroup:before { content: "\f124"; }
 .foehn-pilot:before { content: "\f11d"; }
 .foehn-playback:before { content: "\f10f"; }
 .foehn-playback-2:before { content: "\f110"; }
 .foehn-prefix:before { content: "\f11c"; }
 .foehn-queue:before { content: "\f118"; }
+.foehn-queuemetrics:before { content: "\f138"; }
+.foehn-recorded-calls:before { content: "\f139"; }
+.foehn-reseller:before { content: "\f128"; }
 .foehn-ringgroup:before { content: "\f11a"; }
 .foehn-schedule:before { content: "\f119"; }
 .foehn-script:before { content: "\f111"; }
 .foehn-set-callerid:before { content: "\f112"; }
+.foehn-statistics:before { content: "\f136"; }
+.foehn-supervisors:before { content: "\f12b"; }
+.foehn-supervisors_round:before { content: "\f12d"; }
+.foehn-tenants:before { content: "\f13b"; }
 .foehn-trash:before { content: "\f113"; }
 .foehn-userextension:before { content: "\f108"; }
+.foehn-userextenteam:before { content: "\f125"; }
 .foehn-userprofile:before { content: "\f109"; }
+.foehn-users:before { content: "\f12e"; }
 .foehn-voicemail:before { content: "\f10a"; }
+.foehn-vrecords:before { content: "\f126"; }
 
+$font-font-foehn-billing-rates: "\f127";
+$font-font-foehn-call-records: "\f135";
 $font-font-foehn-callfwd: "\f100";
+$font-font-foehn-cdr-statistics: "\f137";
 $font-font-foehn-conference: "\f11b";
 $font-font-foehn-config: "\f102";
+$font-font-foehn-connector: "\f133";
 $font-font-foehn-copy: "\f103";
+$font-font-foehn-dashboard: "\f12a";
 $font-font-foehn-ddi: "\f104";
 $font-font-foehn-directory: "\f105";
+$font-font-foehn-dlrule: "\f11f";
+$font-font-foehn-dlrule-2: "\f120";
+$font-font-foehn-dlrulegrp: "\f121";
+$font-font-foehn-entities: "\f134";
 $font-font-foehn-extension: "\f106";
 $font-font-foehn-fcode: "\f11e";
 $font-font-foehn-followme: "\f107";
 $font-font-foehn-hangup: "\f10b";
 $font-font-foehn-hangup-2: "\f10c";
+$font-font-foehn-inbound: "\f131";
 $font-font-foehn-ivr: "\f10d";
+$font-font-foehn-logout: "\f122";
+$font-font-foehn-mailbox: "\f130";
+$font-font-foehn-managers: "\f13a";
 $font-font-foehn-mobile-twinning: "\f114";
+$font-font-foehn-moh: "\f123";
 $font-font-foehn-more: "\f115";
 $font-font-foehn-more-reverse: "\f116";
+$font-font-foehn-music-hold: "\f12f";
+$font-font-foehn-outbound: "\f132";
 $font-font-foehn-paste: "\f117";
 $font-font-foehn-phonebook: "\f10e";
+$font-font-foehn-pickupgroup: "\f124";
 $font-font-foehn-pilot: "\f11d";
 $font-font-foehn-playback: "\f10f";
 $font-font-foehn-playback-2: "\f110";
 $font-font-foehn-prefix: "\f11c";
 $font-font-foehn-queue: "\f118";
+$font-font-foehn-queuemetrics: "\f138";
+$font-font-foehn-recorded-calls: "\f139";
+$font-font-foehn-reseller: "\f128";
 $font-font-foehn-ringgroup: "\f11a";
 $font-font-foehn-schedule: "\f119";
 $font-font-foehn-script: "\f111";
 $font-font-foehn-set-callerid: "\f112";
+$font-font-foehn-statistics: "\f136";
+$font-font-foehn-supervisors: "\f12b";
+$font-font-foehn-supervisors_round: "\f12d";
+$font-font-foehn-tenants: "\f13b";
 $font-font-foehn-trash: "\f113";
 $font-font-foehn-userextension: "\f108";
+$font-font-foehn-userextenteam: "\f125";
 $font-font-foehn-userprofile: "\f109";
+$font-font-foehn-users: "\f12e";
 $font-font-foehn-voicemail: "\f10a";
+$font-font-foehn-vrecords: "\f126";
