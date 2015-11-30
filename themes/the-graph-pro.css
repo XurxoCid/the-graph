@@ -244,7 +244,7 @@
   font-family: "Open Sans", "SourceCodePro", "Source Code Pro", Helvetica, Arial, sans-serif;
   text-rendering: geometricPrecision; /* makes text scale smoothly */
   font-size: 14px;
-  fill: #fff;
+  fill: #0c0d0e;
   text-anchor: middle;
   dominant-baseline: central;
 }
@@ -319,6 +319,9 @@
 }
 .the-graph-pro .context-arc-icon-label {
   font-size: 12px;
+}
+.the-graph-pro .context text {
+  fill: #fff;
 }
 .the-graph-pro .context-port-bg {
   fill: rgba(43,48,54,0.95);

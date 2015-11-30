@@ -291,11 +291,11 @@
 }
 .the-graph-foehn .context-node-icon {
   font-size: 30px;
-  fill: #354d66;
+  fill: #fff;
 }
 .the-graph-foehn .context-icon {
   font-size: 20px;
-  fill: #354d66;
+  fill: #fff;
 }
 .the-graph-foehn .context-node-label {
   text-anchor: middle;
@@ -320,6 +320,9 @@
 .the-graph-foehn .context-arc-icon-label {
   font-size: 12px;
 }
+.the-graph-foehn .context text {
+  fill: #fff;
+}
 .the-graph-foehn .context-port-bg {
   fill: rgba(43,48,54,0.95);
 }
@@ -336,7 +339,7 @@
   stroke: #bfbfbf;
 }
 .the-graph-foehn .context-port-label {
-  fill: #354d66;
+  fill: #fff;
   dominant-baseline: central;
 }
 .the-graph-foehn .context-port-in .context-port-label {
@@ -414,7 +417,7 @@
   visibility: hidden;
 }
 .the-graph-foehn .port-label {
-  fill: #303f9f;
+  fill: #354d66;
   visibility: hidden;
   font-size: 6px;
   dominant-baseline: central;
@@ -563,7 +566,7 @@
 }
 .the-graph-foehn .group-label {
   text-anchor: start;
-  fill: #354d66;
+  fill: #fff;
   font-size: 20px;
   transition-property: font-size;
   transition-duration: 0.5s;
@@ -574,7 +577,7 @@
   transition-duration: 0.5s;
 }
 .the-graph-foehn .group-description {
-  fill: #354d66;
+  fill: #fff;
   font-size: 12px;
   text-anchor: start;
 }
