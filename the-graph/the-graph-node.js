@@ -1,3 +1,55 @@
+
+var AuxNodeConfig =  {
+  snap: TheGraph.config.nodeSize,
+  container: {},
+  background: {
+    className: "node-bg"
+  },
+  border: {
+    className: "node-border drag",
+    rx: TheGraph.config.nodeRadius,
+    ry: TheGraph.config.nodeRadius
+  },
+  innerRect: {
+    className: "node-rect drag",
+    x: 3,
+    y: 3,
+    rx: TheGraph.config.nodeRadius - 2,
+    ry: TheGraph.config.nodeRadius - 2
+  },
+  icon: {
+    ref: "icon",
+    className: "icon node-icon drag"
+  },
+  iconsvg: {
+    className: "icon node-icon drag"
+  },
+  inports: {
+    className: "inports"
+  },
+  outports: {
+    className: "outports"
+  },
+  labelBackground: {
+    className: "node-label-bg"
+  },
+  labelRect: {
+    className: "text-bg-rect"
+  },
+  labelText: {
+    className: "node-label"
+  },
+  sublabelBackground: {
+    className: "node-sublabel-bg"
+  },
+  sublabelRect: {
+    className: "text-bg-rect"
+  },
+  sublabelText: {
+    className: "node-sublabel"
+  }
+};
+
 (function (context) {
   "use strict";
 
@@ -100,7 +152,7 @@
     ],
     componentDidMount: function () {
       var domNode = this.getDOMNode();
-      
+
       // Dragging
       domNode.addEventListener("trackstart", this.onTrackStart);
 
@@ -327,7 +379,7 @@
     shouldComponentUpdate: function (nextProps, nextState) {
       // Only rerender if changed
       return (
-        nextProps.x !== this.props.x || 
+        nextProps.x !== this.props.x ||
         nextProps.y !== this.props.y ||
         nextProps.icon !== this.props.icon ||
         nextProps.label !== this.props.label ||
@@ -344,6 +396,41 @@
         // This tag is set when an edge or iip changes port colors
         this.props.ports.dirty = false;
       }
+
+      var DdiBlock = ['ddi']
+      var ConditionalBlocks = ['schedule', 'ivr']
+      var EntityBlocks = ['device', 'user', 'directory', 'queue', 'conference', 'vmail', 'callfwd', 'hangup']
+      var CustomizableBlocks = ['setcallerid', 'script', 'playback', 'pilotnumber', 'moh']
+
+      var classAttached = {
+        'background': 'bg',
+        'border': 'border',
+        'innerRect': 'rect',
+        'icon': 'icon',
+        'iconsvg': 'icon',
+        'inports': 'inports',
+        'outports': 'outports',
+        'labelBackground': 'label-bg',
+        'labelRect': 'label-bg-rect',
+        'labelText': 'label',
+        'sublabelBackground': 'sublabel-bg',
+        'sublabelRect': 'text-bg-rect',
+        'sublabelText': 'sublabel',
+      }
+
+      for (var prop in TheGraph.config.node) {
+          if (TheGraph.config.node[prop].className) {
+              if (DdiBlock.indexOf(this.props.node.component) >= 0) {
+                  TheGraph.config.node[prop].className = AuxNodeConfig[prop].className + " dialplan-base-" + classAttached[prop];
+              } else if (ConditionalBlocks.indexOf(this.props.node.component) >= 0) {
+                  TheGraph.config.node[prop].className = AuxNodeConfig[prop].className + " dialplan-primary-" + classAttached[prop];;
+              } else if (EntityBlocks.indexOf(this.props.node.component) >= 0) {
+                  TheGraph.config.node[prop].className = AuxNodeConfig[prop].className + " dialplan-secondary-" + classAttached[prop];;
+              } else if (CustomizableBlocks.indexOf(this.props.node.component) >= 0) {
+                  TheGraph.config.node[prop].className = AuxNodeConfig[prop].className + " dialplan-third-" + classAttached[prop];;
+              };
+          };
+      };
 
       var label = this.props.label;
       var sublabel = this.props.sublabel;
@@ -448,12 +535,13 @@
           iconContent = TheGraph.factories.node.createNodeIconText.call(this, iconOptions);
       }
 
+
       var backgroundRectOptions = TheGraph.merge(TheGraph.config.node.background, { width: this.props.width, height: this.props.height + 25 });
       var backgroundRect = TheGraph.factories.node.createNodeBackgroundRect.call(this, backgroundRectOptions);
 
       var borderRectOptions = TheGraph.merge(TheGraph.config.node.border, { width: this.props.width, height: this.props.height });
       var borderRect = TheGraph.factories.node.createNodeBorderRect.call(this, borderRectOptions);
-      
+
       var innerRectOptions = TheGraph.merge(TheGraph.config.node.innerRect, { width: this.props.width - 6, height: this.props.height - 6 });
       var innerRect = TheGraph.factories.node.createNodeInnerRect.call(this, innerRectOptions);
 
@@ -463,11 +551,11 @@
       var outportsOptions = TheGraph.merge(TheGraph.config.node.outports, { children: outportViews });
       var outportsGroup = TheGraph.factories.node.createNodeOutportsGroup.call(this, outportsOptions);
 
-      var labelTextOptions = TheGraph.merge(TheGraph.config.node.labelText, { x: this.props.width / 2, y: this.props.height + 15, children: label });
+      var labelTextOptions = TheGraph.merge(TheGraph.config.node.labelText, { x: this.props.width / 2, y: this.props.height - 85, children: label });
       var labelText = TheGraph.factories.node.createNodeLabelText.call(this, labelTextOptions);
 
       var labelRectX = this.props.width / 2;
-      var labelRectY = this.props.height + 15;
+      var labelRectY = this.props.height - 85;
       var labelRectOptions = buildLabelRectOptions(14, labelRectX, labelRectY, label.length, TheGraph.config.node.labelRect.className);
       labelRectOptions = TheGraph.merge(TheGraph.config.node.labelRect, labelRectOptions);
       var labelRect = TheGraph.factories.node.createNodeLabelRect.call(this, labelRectOptions);
@@ -491,7 +579,7 @@
         inportsGroup,
         outportsGroup,
         labelGroup,
-        sublabelGroup
+//        sublabelGroup
       ];
 
       var nodeOptions = {
