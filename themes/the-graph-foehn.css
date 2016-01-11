@@ -801,23 +801,23 @@
 /* Dialpan colors */
 
 .dialplan-primary-bg {
-  background-color: #303f9f;
+  background-color: #f57c00;
 }
 
 .dialplan-primary-fill {
-  fill: #303f9f;
+  fill: #f57c00;
 }
 
 .dialplan-primary-color {
-  color: #303f9f;
+  color: #f57c00;
+}
+
+.the-graph-foehn .selection .node .node-icon .dialplan-primary-fill {
+  fill: #f57c00;
 }
 
 .dialplan-secondary-bg {
   background-color: #303f9f;
-}
-
-.the-graph-foehn .selection .node .node-icon .dialplan-primary-fill {
-  fill: #303f9f;
 }
 
 .dialplan-secondary-fill {
