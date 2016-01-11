@@ -816,12 +816,20 @@
   background-color: #303f9f;
 }
 
+.the-graph-foehn .selection .node .node-icon .dialplan-primary-fill {
+  fill: #303f9f;
+}
+
 .dialplan-secondary-fill {
   fill: #303f9f;
 }
 
 .dialplan-secondary-color {
   color: #303f9f;
+}
+
+.the-graph-foehn .selection .node .node-icon .dialplan-secondary-fill {
+  fill: #303f9f;
 }
 
 .dialplan-base-bg {
@@ -834,4 +842,8 @@
 
 .dialplan-base-color {
   color: #0097a7;
+}
+
+.the-graph-foehn .selection .node .node-icon .dialplan-base-fill {
+  fill: #0097a7;
 }
