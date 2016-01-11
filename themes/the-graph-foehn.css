@@ -799,42 +799,39 @@
 }
 
 /* Dialpan colors */
-$dialplan-primary: #303f9f;
-$dialplan-secondary: #303f9f;
-$dialplan-base: #0097a7;
 
 .dialplan-primary-bg {
-  background-color: $dialplan-primary;
+  background-color: #303f9f;
 }
 
 .dialplan-primary-fill {
-  fill: $dialplan-primary;
+  fill: #303f9f;
 }
 
 .dialplan-primary-color {
-  color: $dialplan-primary;
+  color: #303f9f;
 }
 
 .dialplan-secondary-bg {
-  background-color: $dialplan-secondary;
+  background-color: #303f9f;
 }
 
 .dialplan-secondary-fill {
-  fill: $dialplan-secondary;
+  fill: #303f9f;
 }
 
 .dialplan-secondary-color {
-  color: $dialplan-secondary;
+  color: #303f9f;
 }
 
 .dialplan-base-bg {
-  background-color: $dialplan-base;
+  background-color: #0097a7;
 }
 
 .dialplan-base-fill {
-  fill: $dialplan-base;
+  fill: #0097a7;
 }
 
 .dialplan-base-color {
-  color: $dialplan-base;
+  color: #0097a7;
 }
