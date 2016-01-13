@@ -151,6 +151,39 @@
       event.relatedTarget.dispatchEvent(dropEvent);      
     },
     render: function() {
+
+      var DdiBlock = ['ddi'];
+      var ConditionalBlocks = ['schedule', 'ivr'];
+      var EntityBlocks = [
+          'device', 'user', 'directory', 'queue', 'conference', 'vmail',
+          'callfwd', 'hangup'
+      ];
+      var CustomizableBlocks = [
+        'setcallerid', 'script', 'playback', 'pilotnumber', 'moh'];
+
+      var nodeType = 'base';
+      if (ConditionalBlocks.indexOf(this.props.node.component) >= 0) {
+          nodeType = 'primary';
+      } else if (EntityBlocks.indexOf(this.props.node.component) >= 0) {
+          nodeType = 'secondary';
+      }   else if (CustomizableBlocks.indexOf(this.props.node.component) >= 0) {
+        nodeType = 'third';
+      };
+
+      var classAttached = {
+         container: "port arrow",
+         backgroundCircle: "port-circle-bg",
+         arc: "port-" + nodeType + "-arc",
+         innerCircle: "circleSmall",
+         text: "port-label drag"
+      };
+
+      for (var prop in classAttached) {
+          if (TheGraph.config.port[prop].className) {
+              TheGraph.config.port[prop].className = classAttached[prop];
+          };
+      };
+
       var style;
       if (this.props.label.length > 7) {
         var fontSize = 6 * (30 / (4 * this.props.label.length));

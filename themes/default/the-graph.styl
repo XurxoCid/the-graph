@@ -538,18 +538,60 @@ text {
 .port-arc {
   fill: var-node-border;
 }
+.port-base-arc {
+  fill: var-node-base-border;
+}
+.port-primary-arc {
+  fill: var-node-primary-border;
+}
+.port-secondary-arc {
+  fill: var-node-secondary-border;
+}
+.port-third-arc {
+  fill: var-node-third-border;
+}
+
 .port-circle-small {
   fill: none;
 }
 .small .port-circle {
   visibility: hidden;
 }
+
 .port-label {
-  fill: var-type-b;
+  fill: var-port-label;
   visibility: hidden;
   font-size: 6px;
   dominant-baseline: central;
 }
+
+.port-base-label {
+  fill: var-port-base-label;
+  visibility: hidden;
+  font-size: 6px;
+  dominant-baseline: central;
+}
+
+.port-primary-label {
+  fill: var-port-primary-label;
+  visibility: hidden;
+  font-size: 6px;
+  dominant-baseline: central;
+}
+
+.port-secondary-label {
+  fill: var-port-secondary-label;
+  visibility: hidden;
+  font-size: 6px;
+  dominant-baseline: central;
+}
+
+.port-third-label {
+  fill: var-port-third-label;
+  visibility: hidden;
+  font-size: 6px;
+  dominant-baseline: central;
+} 
 
 .inports .port-label {
   text-anchor: start;
@@ -557,9 +599,36 @@ text {
 .outports .port-label {
   text-anchor: end;
 }
+.outports .port-base-label {
+  text-anchor: end;
+}
+.outports .port-primary-label {
+  text-anchor: end;
+}
+.outports .port-secondary-label {
+  text-anchor: end;
+}
+.outports .port-third-label {
+  text-anchor: end;
+}
 .big .port-label {
   visibility: visible;
 }
+.big .port-base-label {
+  visibility: visible;
+}
+.big .port-primary-label {
+  visibility: visible;
+}
+.big .port-secondary-label {
+  visibility: visible;
+}
+.big .port-third-label {
+  visibility: visible;
+}
+
+
+
 .big .ex-inports .port-label,
 .big .ex-outports .port-label {
   visibility: hidden;
