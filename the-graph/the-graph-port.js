@@ -47,9 +47,9 @@
       this.getDOMNode().addEventListener("the-graph-edge-drop", this.edgeStart);
 
       /*
-      * RESTRICTION: 
+      * RESTRICTION:
       * The only option in a portr is "EXPORT" and we don't want that
-      * therefore, we drop this option 
+      * therefore, we drop this option
       */
       // Show context menu
       // if (this.props.showContext) {
@@ -111,7 +111,7 @@
         return;
       }
       /*
-      * FOEHN-RESTRICTION: 
+      * FOEHN-RESTRICTION:
       * If it is a (inbound) port and there is already a link,
       * we can't create a new one
       */
@@ -129,8 +129,8 @@
       }
       // Don't tap graph
       event.stopPropagation();
-      
-      var edgeStartEvent = new CustomEvent('the-graph-edge-start', { 
+
+      var edgeStartEvent = new CustomEvent('the-graph-edge-start', {
         detail: {
           isIn: this.props.isIn,
           port: this.props.port,
@@ -139,18 +139,48 @@
         },
         bubbles: true
       });
-      this.getDOMNode().dispatchEvent(edgeStartEvent);      
+      this.getDOMNode().dispatchEvent(edgeStartEvent);
     },
     triggerDropOnTarget: function (event) {
       // If dropped on a child element will bubble up to port
       if (!event.relatedTarget) { return; }
-      var dropEvent = new CustomEvent('the-graph-edge-drop', { 
+      var dropEvent = new CustomEvent('the-graph-edge-drop', {
         detail: null,
         bubbles: true
       });
-      event.relatedTarget.dispatchEvent(dropEvent);      
+      event.relatedTarget.dispatchEvent(dropEvent);
     },
     render: function() {
+
+      var DdiBlock = ['ddi'];
+      var ConditionalBlocks = ['schedule', 'ivr'];
+      var EntityBlocks = [
+          'device', 'user', 'directory', 'queue', 'conference', 'vmail',
+          'callfwd', 'hangup'
+      ];
+      var CustomizableBlocks = [
+        'setcallerid', 'script', 'playback', 'pilotnumber', 'moh'];
+      var nodeType = 'base';
+      if (ConditionalBlocks.indexOf(this.props.node.component) >= 0) {
+          nodeType = 'primary';
+      } else if (EntityBlocks.indexOf(this.props.node.component) >= 0) {
+          nodeType = 'secondary';
+      }   else if (CustomizableBlocks.indexOf(this.props.node.component) >= 0) {
+        nodeType = 'third';
+      };
+      var classAttached = {
+         container: "port arrow",
+         backgroundCircle: "port-circle-bg",
+         arc: "port-" + nodeType + "-arc",
+         innerCircle: "circleSmall",
+         text: "port-label drag"
+      };
+      for (var prop in classAttached) {
+          if (TheGraph.config.port[prop].className) {
+              TheGraph.config.port[prop].className = classAttached[prop];
+          };
+      };
+
       var style;
       if (this.props.label.length > 7) {
         var fontSize = 6 * (30 / (4 * this.props.label.length));
@@ -177,7 +207,7 @@
         className: "port-circle-small fill route"+this.props.route,
         r: r - 1.5
       };
-      
+
       innerCircleOptions = TheGraph.merge(TheGraph.config.port.innerCircle, innerCircleOptions);
       var innerCircle = TheGraph.factories.port.createPortInnerCircle.call(this, innerCircleOptions);
 

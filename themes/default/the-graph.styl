@@ -515,15 +515,35 @@ text {
   fill: var-node-border;
   opacity: 0;
 }
+
 .port-arc {
   fill: var-node-border;
 }
+
+.port-base-arc {
+  fill: var-node-base-border;
+}
+
+.port-primary-arc {
+  fill: var-node-primary-border;
+}
+
+.port-secondary-arc {
+  fill: var-node-secondary-border;
+}
+
+.port-third-arc {
+  fill: var-node-third-border;
+}
+
 .port-circle-small {
   fill: none;
 }
+
 .small .port-circle {
   visibility: hidden;
 }
+
 .port-label {
   fill: var-type-b;
   visibility: hidden;
@@ -531,17 +551,40 @@ text {
   dominant-baseline: central;
 }
 
-.inports .port-label {
+.inports .port-label,
+.inports .port-base-label,
+.inports .port-primary-label,
+.inports .port-secondary-label,
+.inports .port-third-label {
   text-anchor: start;
 }
-.outports .port-label {
+
+.outports .port-label,
+.outports .port-base-label,
+.outports .port-primary-label,
+.outports .port-secondary-label,
+.outports .port-third-label {
   text-anchor: end;
 }
-.big .port-label {
+
+.big .port-label,
+.big .port-base-label,
+.big .port-primary-label,
+.big .port-secondary-label,
+.big .port-third-label {
   visibility: visible;
 }
+
 .big .ex-inports .port-label,
-.big .ex-outports .port-label {
+.big .ex-inports .port-base-label,
+.big .ex-inports .port-primary-label,
+.big .ex-inports .port-secondary-label,
+.big .ex-inports .port-third-label,
+.big .ex-outports .port-label,
+.big .ex-outports .port-base-label,
+.big .ex-outports .port-primary-label,
+.big .ex-outports .port-secondary-label,
+.big .ex-outports .port-third-label {
   visibility: hidden;
 }
 
@@ -549,13 +592,14 @@ text {
 /* Groups */
 .group-box {
   fill: var-group00;
-
   transition-property: fill;
   transition-duration: 0.3s;
 }
+
 .group-box:hover {
   fill: var-group00-hover;
 }
+
 .small .group-box {
   stroke-width: 8px;
 }
@@ -593,7 +637,6 @@ text {
 .group-box.color10
   fill: var-group10
   stroke: var-group10-stroke
-
 .group-box.color0:hover
   fill: var-group00-hover
 .group-box.color1:hover
@@ -651,7 +694,6 @@ text {
   .group-box.selection:hover
     fill: var-selection-box-hover
 
-
 .group-label {
   text-anchor: start;
   fill: var-type-a;
@@ -659,6 +701,7 @@ text {
   transition-property: font-size;
   transition-duration: 0.5s;
 }
+
 .small .group-label {
   font-size: 30px;
   transition-property: font-size;
@@ -670,6 +713,7 @@ text {
   font-size: 12px;
   text-anchor: start;
 }
+
 .small .group-description {
   visibility: hidden;
 }
