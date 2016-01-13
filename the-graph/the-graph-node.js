@@ -357,27 +357,27 @@
 
       var nodeType = 'base';
       if (ConditionalBlocks.indexOf(this.props.node.component) >= 0) {
-          nodeType = 'conditional';
+          nodeType = 'primary';
       } else if (EntityBlocks.indexOf(this.props.node.component) >= 0) {
-          nodeType = 'entity';
+          nodeType = 'secondary';
       }   else if (CustomizableBlocks.indexOf(this.props.node.component) >= 0) {
-        nodeType = 'customizable';
+        nodeType = 'third';
       };
 
       var classAttached = {
-//          background: "node-bg",
-//          border: "node-border drag",
-//          innerRect: "node-rect drag",
+          background: "node-bg",
+          border: "node-" + nodeType + "-border drag",
+          innerRect: "node-" +  nodeType + "-rect drag",
           icon: "icon node-" + nodeType + "-icon drag",
-//          iconsvg: "icon node-icon drag",
-//          inports: "inports",
-//          outports: "outports",
-//          labelBackground: "node-label-bg",
-//          labelRect: "text-bg-rect",
-//          labelText: "node-label",
-//          sublabelBackground: "node-sublabel-bg",
-//          sublabelRect: "text-bg-rect",
-//          sublabelText: "node-sublabel"
+          iconsvg: "icon node-icon drag",
+          inports: "inports",
+          outports: "outports",
+          labelBackground: "node-" + nodeType + "-label-bg",
+          labelRect: "text-bg-rect",
+          labelText: "node-" + nodeType + "-label",
+          sublabelBackground: "node-" + nodeType + "-sublabel-bg",
+          sublabelRect: "text-bg-rect",
+          sublabelText: "node-" + nodeType + "-sublabel"
       };
 
       for (var prop in classAttached) {

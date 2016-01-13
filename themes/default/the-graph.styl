@@ -52,10 +52,56 @@ svg {
   stroke: var-node-border;
   stroke-width: 2px;
 };
+
+.node-base-border {
+  fill: var-node-base-border-bg;
+  stroke: var-node-base-border;
+  stroke-width: 2px;
+};
+
+.node-primary-border {
+  fill: var-node-primary-border-bg;
+  stroke: var-node-primary-border;
+  stroke-width: 2px;
+};
+
+.node-secondary-border {
+  fill: var-node-secondary-border-bg;
+  stroke: var-node-secondary-border;
+  stroke-width: 2px;
+};
+
+.node-third-border {
+  fill: var-node-third-border-bg;
+  stroke: var-node-third-border;
+  stroke-width: 2px;
+};
+
 .node-rect {
   fill: var-node;
   stroke: none;
 }
+
+.node-base-rect {
+  fill: var-node-base;
+  stroke: none;
+}
+
+.node-primary-rect {
+  fill: var-node-primary;
+  stroke: none;
+}
+
+.node-secondary-rect {
+  fill: var-node-secondary;
+  stroke: none;
+}
+
+.node-third-rect {
+  fill: var-node-third;
+  stroke: none;
+}
+
 
 @-webkit-keyframes error {
   0% { fill: var-node; }
@@ -440,7 +486,7 @@ text {
   transition-duration: 0.5s,      0.3s;
 }
 
-.node-third/icon {
+.node-third-icon {
   font-size: 45px;
   fill: var-node-third-icon;
   transition-property: font-size, fill;

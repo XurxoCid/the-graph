@@ -33,7 +33,43 @@
   stroke: #dbdddf;
   stroke-width: 2px;
 }
+.the-graph-foehn .node-base-border {
+  fill: #dbdddf;
+  stroke: #f00;
+  stroke-width: 2px;
+}
+.the-graph-foehn .node-primary-border {
+  fill: #dbdddf;
+  stroke: #00f;
+  stroke-width: 2px;
+}
+.the-graph-foehn .node-secondary-border {
+  fill: #dbdddf;
+  stroke: #dbdddf;
+  stroke-width: 2px;
+}
+.the-graph-foehn .node-third-border {
+  fill: #dbdddf;
+  stroke: #dbdddf;
+  stroke-width: 2px;
+}
 .the-graph-foehn .node-rect {
+  fill: #fff;
+  stroke: none;
+}
+.the-graph-foehn .node-base-rect {
+  fill: #fff;
+  stroke: none;
+}
+.the-graph-foehn .node-primary-rect {
+  fill: #fff;
+  stroke: none;
+}
+.the-graph-foehn .node-secondary-rect {
+  fill: #fff;
+  stroke: none;
+}
+.the-graph-foehn .node-third-rect {
   fill: #fff;
   stroke: none;
 }
@@ -385,6 +421,30 @@
 .the-graph-foehn .node-icon {
   font-size: 45px;
   fill: #6e91a1;
+  transition-property: font-size, fill;
+  transition-duration: 0.5s, 0.3s;
+}
+.the-graph-foehn .node-base-icon {
+  font-size: 45px;
+  fill: #f00;
+  transition-property: font-size, fill;
+  transition-duration: 0.5s, 0.3s;
+}
+.the-graph-foehn .node-primary-icon {
+  font-size: 45px;
+  fill: #00f;
+  transition-property: font-size, fill;
+  transition-duration: 0.5s, 0.3s;
+}
+.the-graph-foehn .node-secondary-icon {
+  font-size: 45px;
+  fill: #ffa500;
+  transition-property: font-size, fill;
+  transition-duration: 0.5s, 0.3s;
+}
+.the-graph-foehn .node-third-icon {
+  font-size: 45px;
+  fill: #008000;
   transition-property: font-size, fill;
   transition-duration: 0.5s, 0.3s;
 }
@@ -796,54 +856,4 @@
   60% {
     stroke-width: 12px;
   }
-}
-
-/* Dialpan colors */
-
-.dialplan-primary-bg {
-  background-color: #f57c00;
-}
-
-.dialplan-primary-fill {
-  fill: #f57c00;
-}
-
-.dialplan-primary-color {
-  color: #f57c00;
-}
-
-.the-graph-foehn .selection .node .node-icon .dialplan-primary-fill {
-  fill: #f57c00;
-}
-
-.dialplan-secondary-bg {
-  background-color: #303f9f;
-}
-
-.dialplan-secondary-fill {
-  fill: #303f9f;
-}
-
-.dialplan-secondary-color {
-  color: #303f9f;
-}
-
-.the-graph-foehn .selection .node .node-icon .dialplan-secondary-fill {
-  fill: #303f9f;
-}
-
-.dialplan-base-bg {
-  background-color: #0097a7;
-}
-
-.dialplan-base-fill {
-  fill: #0097a7;
-}
-
-.dialplan-base-color {
-  color: #0097a7;
-}
-
-.the-graph-foehn .selection .node .node-icon .dialplan-base-fill {
-  fill: #0097a7;
 }
