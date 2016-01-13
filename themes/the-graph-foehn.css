@@ -34,8 +34,8 @@
   stroke-width: 2px;
 }
 .the-graph-foehn .node-base-border {
-  fill: #dbdddf;
-  stroke: #f00;
+  fill: #3c763d;
+  stroke: #3c763d;
   stroke-width: 2px;
 }
 .the-graph-foehn .node-primary-border {
@@ -52,6 +52,21 @@
   fill: #dbdddf;
   stroke: #dbdddf;
   stroke-width: 2px;
+}
+.the-graph-foehn .node-label {
+  fill: #dbdddf;
+}
+.the-graph-foehn .node-base-label {
+  fill: #3c763d;
+}
+.the-graph-foehn .node-primary-label {
+  fill: #00f;
+}
+.the-graph-foehn .node-secondary-label {
+  fill: #ffa500;
+}
+.the-graph-foehn .node-third-label {
+  fill: #008000;
 }
 .the-graph-foehn .node-rect {
   fill: #fff;
@@ -426,7 +441,7 @@
 }
 .the-graph-foehn .node-base-icon {
   font-size: 45px;
-  fill: #f00;
+  fill: #3c763d;
   transition-property: font-size, fill;
   transition-duration: 0.5s, 0.3s;
 }
@@ -470,6 +485,18 @@
 .the-graph-foehn .port-arc {
   fill: #dbdddf;
 }
+.the-graph-foehn .port-base-arc {
+  fill: #3c763d;
+}
+.the-graph-foehn .port-primary-arc {
+  fill: #00f;
+}
+.the-graph-foehn .port-secondary-arc {
+  fill: #dbdddf;
+}
+.the-graph-foehn .port-third-arc {
+  fill: #dbdddf;
+}
 .the-graph-foehn .port-circle-small {
   fill: none;
 }
@@ -477,7 +504,31 @@
   visibility: hidden;
 }
 .the-graph-foehn .port-label {
-  fill: #354d66;
+  fill: #dbdddf;
+  visibility: hidden;
+  font-size: 6px;
+  dominant-baseline: central;
+}
+.the-graph-foehn .port-base-label {
+  fill: #3c763d;
+  visibility: hidden;
+  font-size: 6px;
+  dominant-baseline: central;
+}
+.the-graph-foehn .port-primary-label {
+  fill: #00f;
+  visibility: hidden;
+  font-size: 6px;
+  dominant-baseline: central;
+}
+.the-graph-foehn .port-secondary-label {
+  fill: #ffa500;
+  visibility: hidden;
+  font-size: 6px;
+  dominant-baseline: central;
+}
+.the-graph-foehn .port-third-label {
+  fill: #008000;
   visibility: hidden;
   font-size: 6px;
   dominant-baseline: central;
@@ -488,7 +539,31 @@
 .the-graph-foehn .outports .port-label {
   text-anchor: end;
 }
+.the-graph-foehn .outports .port-base-label {
+  text-anchor: end;
+}
+.the-graph-foehn .outports .port-primary-label {
+  text-anchor: end;
+}
+.the-graph-foehn .outports .port-secondary-label {
+  text-anchor: end;
+}
+.the-graph-foehn .outports .port-third-label {
+  text-anchor: end;
+}
 .the-graph-foehn .big .port-label {
+  visibility: visible;
+}
+.the-graph-foehn .big .port-base-label {
+  visibility: visible;
+}
+.the-graph-foehn .big .port-primary-label {
+  visibility: visible;
+}
+.the-graph-foehn .big .port-secondary-label {
+  visibility: visible;
+}
+.the-graph-foehn .big .port-third-label {
   visibility: visible;
 }
 .the-graph-foehn .big .ex-inports .port-label,
