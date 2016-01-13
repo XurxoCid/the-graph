@@ -34,8 +34,8 @@
   stroke-width: 2px;
 }
 .the-graph-foehn .node-base-border {
-  fill: #dbdddf;
-  stroke: #f00;
+  fill: #3c763d;
+  stroke: #3c763d;
   stroke-width: 2px;
 }
 .the-graph-foehn .node-primary-border {
@@ -52,6 +52,21 @@
   fill: #dbdddf;
   stroke: #dbdddf;
   stroke-width: 2px;
+}
+.the-graph-foehn .node-label {
+  fill: #dbdddf;
+}
+.the-graph-foehn .node-base-label {
+  fill: #3c763d;
+}
+.the-graph-foehn .node-primary-label {
+  fill: var-node-primary-label;
+}
+.the-graph-foehn .node-secondary-label {
+  fill: var-node-secondary-label;
+}
+.the-graph-foehn .node-third-label {
+  fill: var-node-third-label;
 }
 .the-graph-foehn .node-rect {
   fill: #fff;
@@ -426,7 +441,7 @@
 }
 .the-graph-foehn .node-base-icon {
   font-size: 45px;
-  fill: #f00;
+  fill: #3c763d;
   transition-property: font-size, fill;
   transition-duration: 0.5s, 0.3s;
 }
