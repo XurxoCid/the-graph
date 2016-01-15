@@ -1,55 +1,4 @@
 
-var AuxNodeConfig =  {
-  snap: TheGraph.config.nodeSize,
-  container: {},
-  background: {
-    className: "node-bg"
-  },
-  border: {
-    className: "node-border drag",
-    rx: TheGraph.config.nodeRadius,
-    ry: TheGraph.config.nodeRadius
-  },
-  innerRect: {
-    className: "node-rect drag",
-    x: 3,
-    y: 3,
-    rx: TheGraph.config.nodeRadius - 2,
-    ry: TheGraph.config.nodeRadius - 2
-  },
-  icon: {
-    ref: "icon",
-    className: "icon node-icon drag"
-  },
-  iconsvg: {
-    className: "icon node-icon drag"
-  },
-  inports: {
-    className: "inports"
-  },
-  outports: {
-    className: "outports"
-  },
-  labelBackground: {
-    className: "node-label-bg"
-  },
-  labelRect: {
-    className: "text-bg-rect"
-  },
-  labelText: {
-    className: "node-label"
-  },
-  sublabelBackground: {
-    className: "node-sublabel-bg"
-  },
-  sublabelRect: {
-    className: "text-bg-rect"
-  },
-  sublabelText: {
-    className: "node-sublabel"
-  }
-};
-
 (function (context) {
   "use strict";
 
@@ -397,38 +346,48 @@ var AuxNodeConfig =  {
         this.props.ports.dirty = false;
       }
 
-      var DdiBlock = ['ddi']
-      var ConditionalBlocks = ['schedule', 'ivr']
-      var EntityBlocks = ['device', 'user', 'directory', 'queue', 'conference', 'vmail', 'callfwd', 'hangup']
-      var CustomizableBlocks = ['setcallerid', 'script', 'playback', 'pilotnumber', 'moh']
+      var nodeName = this.props.node.component;
+      if (!isNaN(nodeName.substring(nodeName.length-2,nodeName.length)) ) {
+	  nodeName = nodeName.substring(0,nodeName.length-2);
+      };
+      var DdiBlock = ['ddi'];
+      var ConditionalBlocks = ['schedule', 'ivr'];
+      var EntityBlocks = [
+          'device', 'user', 'directory', 'queue', 'conference', 'vmail',
+          'callfwd', 'hangup'
+      ];
+      var CustomizableBlocks = [
+        'setcallerid', 'script', 'playback', 'pilot', 'moh'
+      ];
+
+      var nodeType = 'base';
+      if (ConditionalBlocks.indexOf(nodeName) >= 0) {
+          nodeType = 'primary';
+      } else if (EntityBlocks.indexOf(nodeName) >= 0) {
+          nodeType = 'secondary';
+      }   else if (CustomizableBlocks.indexOf(nodeName) >= 0) {
+        nodeType = 'third';
+      };
 
       var classAttached = {
-        'background': 'bg',
-        'border': 'border',
-        'innerRect': 'rect',
-        'icon': 'icon',
-        'iconsvg': 'icon',
-        'inports': 'inports',
-        'outports': 'outports',
-        'labelBackground': 'label-bg',
-        'labelRect': 'label-bg-rect',
-        'labelText': 'label',
-        'sublabelBackground': 'sublabel-bg',
-        'sublabelRect': 'text-bg-rect',
-        'sublabelText': 'sublabel',
-      }
+          background: "node-bg",
+          border: "node-" + nodeType + "-border drag",
+          innerRect: "node-" +  nodeType + "-rect drag",
+          icon: "icon node-" + nodeType + "-icon drag",
+          iconsvg: "icon node-icon drag",
+          inports: "inports",
+          outports: "outports",
+          labelBackground: "node-" + nodeType + "-label-bg",
+          labelRect: "text-bg-rect",
+          labelText: "node-" + nodeType + "-label",
+          sublabelBackground: "node-" + nodeType + "-sublabel-bg",
+          sublabelRect: "text-bg-rect",
+          sublabelText: "node-" + nodeType + "-sublabel"
+      };
 
-      for (var prop in TheGraph.config.node) {
+      for (var prop in classAttached) {
           if (TheGraph.config.node[prop].className) {
-              if (DdiBlock.indexOf(this.props.node.component) >= 0) {
-                  TheGraph.config.node[prop].className = AuxNodeConfig[prop].className + " dialplan-base-" + classAttached[prop];
-              } else if (ConditionalBlocks.indexOf(this.props.node.component) >= 0) {
-                  TheGraph.config.node[prop].className = AuxNodeConfig[prop].className + " dialplan-primary-" + classAttached[prop];;
-              } else if (EntityBlocks.indexOf(this.props.node.component) >= 0) {
-                  TheGraph.config.node[prop].className = AuxNodeConfig[prop].className + " dialplan-secondary-" + classAttached[prop];;
-              } else if (CustomizableBlocks.indexOf(this.props.node.component) >= 0) {
-                  TheGraph.config.node[prop].className = AuxNodeConfig[prop].className + " dialplan-third-" + classAttached[prop];;
-              };
+              TheGraph.config.node[prop].className = classAttached[prop];
           };
       };
 

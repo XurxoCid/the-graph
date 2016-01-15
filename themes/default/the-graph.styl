@@ -48,14 +48,80 @@ svg {
 /* defaults */
 
 .node-border {
-  fill: var-node-border-bg;
+  fill: var-node-border;
   stroke: var-node-border;
   stroke-width: 2px;
 };
+
+.node-base-border {
+  fill: var-node-base-border-bg;
+  stroke: var-node-base-border;
+  stroke-width: 2px;
+};
+
+.node-primary-border {
+  fill: var-node-primary-border;
+  stroke: var-node-primary-border;
+  stroke-width: 2px;
+};
+
+.node-secondary-border {
+  fill: var-node-secondary-border;
+  stroke: var-node-secondary-border;
+  stroke-width: 2px;
+};
+
+.node-third-border {
+  fill: var-node-third-border;
+  stroke: var-node-third-border;
+  stroke-width: 2px;
+};
+
+.node-label {
+  fill: var-node-label;
+};
+
+.node-base-label {
+  fill: var-node-base-label;
+};
+
+.node-primary-label {
+  fill: var-node-primary-label;
+};
+
+.node-secondary-label {
+  fill: var-node-secondary-label;
+};
+
+.node-third-label {
+  fill: var-node-third-label;
+};
+
 .node-rect {
   fill: var-node;
   stroke: none;
 }
+
+.node-base-rect {
+  fill: var-node-base;
+  stroke: none;
+}
+
+.node-primary-rect {
+  fill: var-node-primary;
+  stroke: none;
+}
+
+.node-secondary-rect {
+  fill: var-node-secondary;
+  stroke: none;
+}
+
+.node-third-rect {
+  fill: var-node-third;
+  stroke: none;
+}
+
 
 @-webkit-keyframes error {
   0% { fill: var-node; }
@@ -419,6 +485,34 @@ text {
   transition-duration: 0.5s,      0.3s;
 }
 
+.node-base-icon {
+  font-size: 45px;
+  fill: var-node-base-icon;
+  transition-property: font-size, fill;
+  transition-duration: 0.5s,      0.3s;
+}
+
+.node-primary-icon {
+  font-size: 45px;
+  fill: var-node-primary-icon;
+  transition-property: font-size, fill;
+  transition-duration: 0.5s,      0.3s;
+}
+
+.node-secondary-icon {
+  font-size: 45px;
+  fill: var-node-secondary-icon;
+  transition-property: font-size, fill;
+  transition-duration: 0.5s,      0.3s;
+}
+
+.node-third-icon {
+  font-size: 45px;
+  fill: var-node-third-icon;
+  transition-property: font-size, fill;
+  transition-duration: 0.5s,      0.3s;
+}
+
 .small .node-icon {
   fill: var-node-icon-small;
   font-size: 66px;
@@ -441,33 +535,142 @@ text {
   fill: var-node-border;
   opacity: 0;
 }
+
 .port-arc {
   fill: var-node-border;
 }
+
+.port-base-arc {
+  fill: var-node-base-border;
+}
+
+.port-primary-arc {
+  fill: var-node-primary-border;
+}
+
+.port-secondary-arc {
+  fill: var-node-secondary-border;
+}
+
+.port-base-arc {
+  fill: var-node-base-border;
+}
+.port-primary-arc {
+  fill: var-node-primary-border;
+}
+.port-secondary-arc {
+  fill: var-node-secondary-border;
+}
+
+.port-third-arc {
+  fill: var-node-third-border;
+}
+
 .port-circle-small {
   fill: none;
 }
+
 .small .port-circle {
   visibility: hidden;
 }
-.port-label {
-  fill: var-type-b;
+
+.inports .port-label {
+  fill: var-port-label;
   visibility: hidden;
   font-size: 6px;
   dominant-baseline: central;
 }
 
-.inports .port-label {
-  text-anchor: start;
+
+.inports .port-base-label {
+  fill: var-port-base-label;
+  visibility: hidden;
+  font-size: 6px;
+  dominant-baseline: central;
 }
-.outports .port-label {
+
+.inports .port-primary-label {
+  fill: var-port-primary-label;
+  visibility: hidden;
+  font-size: 6px;
+  dominant-baseline: central;
+}
+
+.inports .port-secondary-label {
+  fill: var-port-secondary-label;
+  visibility: hidden;
+  font-size: 6px;
+  dominant-baseline: central;
+}
+
+.inports .port-third-label {
+  fill: var-port-third-label;
+  visibility: hidden;
+  font-size: 6px;
+  dominant-baseline: central;
+} 
+
+.port-label {
+  fill: var-port-label;
+  visibility: hidden;
+  font-size: 6px;
+  dominant-baseline: central;
+}
+
+.port-base-label {
+  fill: var-port-base-label;
+  visibility: hidden;
+  font-size: 6px;
+  dominant-baseline: central;
+}
+
+.port-primary-label {
+  fill: var-port-primary-label;
+  visibility: hidden;
+  font-size: 6px;
+  dominant-baseline: central;
+}
+
+.port-secondary-label {
+  fill: var-port-secondary-label;
+  visibility: hidden;
+  font-size: 6px;
+  dominant-baseline: central;
+}
+
+.port-third-label {
+  fill: var-port-third-label;
+  visibility: hidden;
+  font-size: 6px;
+  dominant-baseline: central;
+}
+
+.outports .port-label,
+.outports .port-base-label,
+.outports .port-primary-label,
+.outports .port-secondary-label,
+.outports .port-third-label {
   text-anchor: end;
 }
-.big .port-label {
+
+.big .port-label,
+.big .port-base-label,
+.big .port-primary-label,
+.big .port-secondary-label,
+.big .port-third-label {
   visibility: visible;
 }
+
 .big .ex-inports .port-label,
-.big .ex-outports .port-label {
+.big .ex-inports .port-base-label,
+.big .ex-inports .port-primary-label,
+.big .ex-inports .port-secondary-label,
+.big .ex-inports .port-third-label,
+.big .ex-outports .port-label,
+.big .ex-outports .port-base-label,
+.big .ex-outports .port-primary-label,
+.big .ex-outports .port-secondary-label,
+.big .ex-outports .port-third-label {
   visibility: hidden;
 }
 
@@ -475,13 +678,14 @@ text {
 /* Groups */
 .group-box {
   fill: var-group00;
-
   transition-property: fill;
   transition-duration: 0.3s;
 }
+
 .group-box:hover {
   fill: var-group00-hover;
 }
+
 .small .group-box {
   stroke-width: 8px;
 }
@@ -519,7 +723,6 @@ text {
 .group-box.color10
   fill: var-group10
   stroke: var-group10-stroke
-
 .group-box.color0:hover
   fill: var-group00-hover
 .group-box.color1:hover
@@ -577,7 +780,6 @@ text {
   .group-box.selection:hover
     fill: var-selection-box-hover
 
-
 .group-label {
   text-anchor: start;
   fill: var-type-a;
@@ -585,6 +787,7 @@ text {
   transition-property: font-size;
   transition-duration: 0.5s;
 }
+
 .small .group-label {
   font-size: 30px;
   transition-property: font-size;
@@ -596,6 +799,7 @@ text {
   font-size: 12px;
   text-anchor: start;
 }
+
 .small .group-description {
   visibility: hidden;
 }
