@@ -48,7 +48,7 @@ svg {
 /* defaults */
 
 .node-border {
-  fill: var-node-border-bg;
+  fill: var-node-border;
   stroke: var-node-border;
   stroke-width: 2px;
 };
@@ -60,19 +60,19 @@ svg {
 };
 
 .node-primary-border {
-  fill: var-node-primary-border-bg;
+  fill: var-node-primary-border;
   stroke: var-node-primary-border;
   stroke-width: 2px;
 };
 
 .node-secondary-border {
-  fill: var-node-secondary-border-bg;
+  fill: var-node-secondary-border;
   stroke: var-node-secondary-border;
   stroke-width: 2px;
 };
 
 .node-third-border {
-  fill: var-node-third-border-bg;
+  fill: var-node-third-border;
   stroke: var-node-third-border;
   stroke-width: 2px;
 };
@@ -574,16 +574,41 @@ text {
   visibility: hidden;
 }
 
-.inports .port-label,
-.inports .port-base-label,
-.inports .port-primary-label,
-.inports .port-secondary-label,
-.inports .port-third-label {
+.inports .port-label {
+  fill: var-port-label;
+  visibility: hidden;
+  font-size: 6px;
+  dominant-baseline: central;
+}
+
+
+.inports .port-base-label {
+  fill: var-port-base-label;
+  visibility: hidden;
+  font-size: 6px;
+  dominant-baseline: central;
+}
+
+.inports .port-primary-label {
   fill: var-port-primary-label;
   visibility: hidden;
   font-size: 6px;
   dominant-baseline: central;
 }
+
+.inports .port-secondary-label {
+  fill: var-port-secondary-label;
+  visibility: hidden;
+  font-size: 6px;
+  dominant-baseline: central;
+}
+
+.inports .port-third-label {
+  fill: var-port-third-label;
+  visibility: hidden;
+  font-size: 6px;
+  dominant-baseline: central;
+} 
 
 .port-label {
   fill: var-port-label;
@@ -594,6 +619,13 @@ text {
 
 .port-base-label {
   fill: var-port-base-label;
+  visibility: hidden;
+  font-size: 6px;
+  dominant-baseline: central;
+}
+
+.port-primary-label {
+  fill: var-port-primary-label;
   visibility: hidden;
   font-size: 6px;
   dominant-baseline: central;

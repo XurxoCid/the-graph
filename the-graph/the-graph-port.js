@@ -152,6 +152,10 @@
     },
     render: function() {
 
+      var nodeName = this.props.node.component;
+      if (!isNaN(nodeName.substring(nodeName.length-2,nodeName.length)) ) {
+          nodeName = nodeName.substring(0,nodeName.length-2);
+      };
       var DdiBlock = ['ddi'];
       var ConditionalBlocks = ['schedule', 'ivr'];
       var EntityBlocks = [
@@ -159,13 +163,13 @@
           'callfwd', 'hangup'
       ];
       var CustomizableBlocks = [
-        'setcallerid', 'script', 'playback', 'pilotnumber', 'moh'];
+        'setcallerid', 'script', 'playback', 'pilot', 'moh'];
       var nodeType = 'base';
-      if (ConditionalBlocks.indexOf(this.props.node.component) >= 0) {
+      if (ConditionalBlocks.indexOf(nodeName) >= 0) {
           nodeType = 'primary';
-      } else if (EntityBlocks.indexOf(this.props.node.component) >= 0) {
+      } else if (EntityBlocks.indexOf(nodeName) >= 0) {
           nodeType = 'secondary';
-      }   else if (CustomizableBlocks.indexOf(this.props.node.component) >= 0) {
+      }   else if (CustomizableBlocks.indexOf(nodeName) >= 0) {
         nodeType = 'third';
       };
       var classAttached = {
@@ -173,7 +177,7 @@
          backgroundCircle: "port-circle-bg",
          arc: "port-" + nodeType + "-arc",
          innerCircle: "circleSmall",
-         text: "port-label drag"
+         text: "port-" + nodeType + "-label drag"
       };
       for (var prop in classAttached) {
           if (TheGraph.config.port[prop].className) {
