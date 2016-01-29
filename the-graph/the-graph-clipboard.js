@@ -107,9 +107,11 @@
           $('#myModal').modal('toggle');
           $('#saveNode').off();
           $('#saveNode').click(function() {
-            saveForm(node, editor);
+            var result = saveForm(node, editor);
             editor.rerender();
-            $('#myModal').modal('toggle');
+            if (result) {
+               $('#myModal').modal('toggle');
+            };
           });
       })
       .fail(function( jqXHR, textStatus, errorThrown){
@@ -125,9 +127,11 @@
       $('#myModal').modal('toggle');
       $('#saveNode').off();
       $('#saveNode').click(function() {
-        saveForm(node, editor);
+        var result = saveForm(node, editor);
         editor.rerender();
-        $('#myModal').modal('toggle');
+        if (result) {
+          $('#myModal').modal('toggle');
+        };
       });
 
     };
