@@ -4,11 +4,11 @@
 
 @font-face {
   font-family: "font-foehn";
-  src: url("font-foehn_5ae458c62ae2754add473e68b5e33def.eot");
-  src: url("font-foehn_5ae458c62ae2754add473e68b5e33def.eot?#iefix") format("embedded-opentype"),
-       url("font-foehn_5ae458c62ae2754add473e68b5e33def.woff") format("woff"),
-       url("font-foehn_5ae458c62ae2754add473e68b5e33def.ttf") format("truetype"),
-       url("font-foehn_5ae458c62ae2754add473e68b5e33def.svg#font-foehn") format("svg");
+  src: url("font-foehn_6fe10ac74e08d25109153e7ca0ec4c0b.eot");
+  src: url("font-foehn_6fe10ac74e08d25109153e7ca0ec4c0b.eot?#iefix") format("embedded-opentype"),
+       url("font-foehn_6fe10ac74e08d25109153e7ca0ec4c0b.woff") format("woff"),
+       url("font-foehn_6fe10ac74e08d25109153e7ca0ec4c0b.ttf") format("truetype"),
+       url("font-foehn_6fe10ac74e08d25109153e7ca0ec4c0b.svg#font-foehn") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -16,13 +16,14 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: "font-foehn";
-    src: url("font-foehn_5ae458c62ae2754add473e68b5e33def.svg#font-foehn") format("svg");
+    src: url("font-foehn_6fe10ac74e08d25109153e7ca0ec4c0b.svg#font-foehn") format("svg");
   }
 }
 
 [data-icon]:before { content: attr(data-icon); }
 
 [data-icon]:before,
+.foehn-alert:before,
 .foehn-billing-rates:before,
 .foehn-call-records:before,
 .foehn-callfwd:before,
@@ -73,6 +74,7 @@
 .foehn-supervisors:before,
 .foehn-supervisors_round:before,
 .foehn-tenants:before,
+.foehn-tour:before,
 .foehn-trash:before,
 .foehn-userextension:before,
 .foehn-userextenteam:before,
@@ -94,6 +96,7 @@
   font-smoothing: antialiased;
 }
 
+.foehn-alert:before { content: "\f13d"; }
 .foehn-billing-rates:before { content: "\f127"; }
 .foehn-call-records:before { content: "\f135"; }
 .foehn-callfwd:before { content: "\f100"; }
@@ -144,6 +147,7 @@
 .foehn-supervisors:before { content: "\f12b"; }
 .foehn-supervisors_round:before { content: "\f12d"; }
 .foehn-tenants:before { content: "\f13b"; }
+.foehn-tour:before { content: "\f13c"; }
 .foehn-trash:before { content: "\f113"; }
 .foehn-userextension:before { content: "\f108"; }
 .foehn-userextenteam:before { content: "\f125"; }
@@ -152,6 +156,7 @@
 .foehn-voicemail:before { content: "\f10a"; }
 .foehn-vrecords:before { content: "\f126"; }
 
+$font-font-foehn-alert: "\f13d";
 $font-font-foehn-billing-rates: "\f127";
 $font-font-foehn-call-records: "\f135";
 $font-font-foehn-callfwd: "\f100";
@@ -202,6 +207,7 @@ $font-font-foehn-statistics: "\f136";
 $font-font-foehn-supervisors: "\f12b";
 $font-font-foehn-supervisors_round: "\f12d";
 $font-font-foehn-tenants: "\f13b";
+$font-font-foehn-tour: "\f13c";
 $font-font-foehn-trash: "\f113";
 $font-font-foehn-userextension: "\f108";
 $font-font-foehn-userextenteam: "\f125";
