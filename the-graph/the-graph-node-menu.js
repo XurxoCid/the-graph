@@ -85,9 +85,9 @@
        * DDI is a box which can't be copied
        */
       var menu = {};
-      if (this.props.label === "DDI") {
+      if (this.props.options.item.component === "ddi") {
          menu['n4'] = this.props.menu.n4;
-      } else if (this.props.label === "HANGUP") {
+      } else if (this.props.options.item.component === "hangup") {
          menu['s4'] = this.props.menu.s4;
       } else {
          menu['n4'] = this.props.menu.n4;
