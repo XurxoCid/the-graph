@@ -100,6 +100,13 @@
 
       // Safari is wheelDeltaY
       this.zoomFactor += event.deltaY ? event.deltaY : 0-event.wheelDeltaY;
+
+      // Firefox need more zoomFactor
+      var isFirefox = typeof InstallTrigger !== 'undefined';
+      if (isFirefox) {
+         this.zoomFactor = this.zoomFactor*20;
+      };
+
       this.zoomX = event.clientX;
       this.zoomY = event.clientY;
       requestAnimationFrame(this.scheduleWheelZoom);
@@ -113,7 +120,7 @@
       var scale = this.state.scale + (this.state.scale * zoomFactor);
       this.zoomFactor = 0;
 
-      if (scale < this.minZoom) { 
+      if (scale < this.minZoom) {
         scale = this.minZoom;
       }
       if (scale === this.state.scale) { return; }
@@ -315,7 +322,7 @@
       if (Hammer) {
         Hammer(domNode, {
           tap: false,
-          hold: false, 
+          hold: false,
           transform: true
         });
       }
@@ -389,8 +396,8 @@
     },
     keyDown: function (event) {
       // HACK metaKey global for taps https://github.com/Polymer/PointerGestures/issues/29
-      if (event.metaKey || event.ctrlKey) { 
-        TheGraph.metaKeyPressed = true; 
+      if (event.metaKey || event.ctrlKey) {
+        TheGraph.metaKeyPressed = true;
       }
     },
     keyUp: function (event) {
@@ -402,8 +409,8 @@
         this.refs.graph.cancelPreviewEdge();
       }
       // HACK metaKey global for taps https://github.com/Polymer/PointerGestures/issues/29
-      if (TheGraph.metaKeyPressed) { 
-        TheGraph.metaKeyPressed = false; 
+      if (TheGraph.metaKeyPressed) {
+        TheGraph.metaKeyPressed = false;
       }
     },
     unselectAll: function (event) {
@@ -437,7 +444,7 @@
       var or = Math.floor(this.state.y / g) + (this.state.y<0 ? 1 : 0);
 
       while (row--) {
-        var col = cols; 
+        var col = cols;
         while (col--) {
           var x = Math.round(col*g+dx);
           var y = Math.round(row*g+dy);
@@ -504,7 +511,7 @@
           children: contextMenu
         };
 
-        contextModal = [ 
+        contextModal = [
           TheGraph.factories.app.createAppModalBackground(modalBGOptions)
         ];
         this.menuShown = true;
