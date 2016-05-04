@@ -510,11 +510,12 @@
       var outportsOptions = TheGraph.merge(TheGraph.config.node.outports, { children: outportViews });
       var outportsGroup = TheGraph.factories.node.createNodeOutportsGroup.call(this, outportsOptions);
 
-      var labelTextOptions = TheGraph.merge(TheGraph.config.node.labelText, { x: this.props.width / 2, y: this.props.height - 85, children: label });
+      var offsetLabelY = -10;
+      var labelTextOptions = TheGraph.merge(TheGraph.config.node.labelText, { x: this.props.width / 2, y: offsetLabelY, children: label });
       var labelText = TheGraph.factories.node.createNodeLabelText.call(this, labelTextOptions);
 
       var labelRectX = this.props.width / 2;
-      var labelRectY = this.props.height - 85;
+      var labelRectY = offsetLabelY;
       var labelRectOptions = buildLabelRectOptions(14, labelRectX, labelRectY, label.length, TheGraph.config.node.labelRect.className);
       labelRectOptions = TheGraph.merge(TheGraph.config.node.labelRect, labelRectOptions);
       var labelRect = TheGraph.factories.node.createNodeLabelRect.call(this, labelRectOptions);
