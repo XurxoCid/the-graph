@@ -47,6 +47,24 @@
         var key = keys[i];
         var port = ports[key];
 
+        /*
+        * FOEHN-RESTRICTION:
+        * If it is a (inbound) port and there is already a link,
+        * we don't deply the
+        */
+        if (!this.props.isIn) {
+          var graph = this._owner.props.graph;
+          var otherLink = false;
+          for (var iter in graph.edges) {
+            var edge = graph.edges[iter];
+            if ((( port.label === edge.from.port ) && ( this.props.processKey == edge.from.node ))) {
+              otherLink = true;
+              continue;
+            };
+          };
+          if (otherLink) {continue;};
+        };
+
         var x = (this.props.isIn ? -100 : 100);
         var y = 0 - h/2 + i*TheGraph.contextPortSize + TheGraph.contextPortSize/2;
         var ox = (port.x - this.props.nodeWidth/2) * scale + deltaX;
