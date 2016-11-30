@@ -497,11 +497,14 @@
       var contextMenu, contextModal;
       if ( this.state.contextMenu ) {
         var options = this.state.contextMenu;
-        var menu = this.props.getMenuDef(options);
-        if (menu) {
-          contextMenu = options.element.getContext(menu, options, this.hideContext);
+        if ( options.type !== 'main' ) {
+          var menu = this.props.getMenuDef(options);
+          if (menu) {
+            contextMenu = options.element.getContext(menu, options, this.hideContext);
+          }
         }
       }
+
       if (contextMenu) {
 
         var modalBGOptions ={
