@@ -75,7 +75,7 @@
   };
 
   TheGraph.Clipboard.displayMenu =  function(graph, node) {
-    
+
     var editor = document.getElementById('editor');
     $('#modalForm').empty();
     if ( isNaN(node.component.substring(node.component.length-2,node.component.length)) ) {
@@ -87,6 +87,7 @@
     var requireAjaxRequest = [
       "ddi", "schedule", "ivr", "device", "user",
       "queue", "voicemail", "playback", "script", "conference",
+      "huntgrp"
     ];
 
     if (requireAjaxRequest.indexOf(name)>= 0) {
